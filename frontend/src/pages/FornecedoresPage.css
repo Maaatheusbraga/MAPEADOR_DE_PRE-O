@@ -23,7 +23,7 @@
 
 .btn-novo {
   padding: 14px 24px;
-  background: #4caf50;
+  background: var(--cor-laranja);
   color: white;
   border: none;
   border-radius: 8px;
@@ -35,7 +35,7 @@
 }
 
 .btn-novo:hover {
-  background: #45a049;
+  background: var(--cor-laranja-hover);
 }
 
 /* Search Bar */
@@ -57,7 +57,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--cor-petroleo);
 }
 
 /* View Toggle */
@@ -84,12 +84,12 @@
 }
 
 .view-toggle button:hover {
-  color: #667eea;
+  color: var(--cor-petroleo);
   background: #f8f9fa;
 }
 
 .view-toggle button.active {
-  background: #667eea;
+  background: var(--cor-petroleo);
   color: white;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .card-info a {
-  color: #667eea;
+  color: var(--cor-petroleo);
   text-decoration: none;
   word-break: break-all;
 }
@@ -305,7 +305,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--cor-petroleo);
 }
 
 .form-group.checkbox label {
@@ -357,12 +357,12 @@
 }
 
 .btn-primary {
-  background: #667eea;
+  background: var(--cor-laranja);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #5568d3;
+  background: var(--cor-laranja-hover);
 }
 
 .btn-primary:disabled {
@@ -372,8 +372,8 @@
 
 .btn-secondary {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--cor-petroleo);
+  border: 2px solid var(--cor-petroleo);
 }
 
 .btn-secondary:hover {
@@ -474,7 +474,7 @@
 }
 
 .fornecedores-table thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradiente-marca);
   color: white;
 }
 
@@ -546,7 +546,7 @@
 }
 
 .site-link {
-  color: #667eea;
+  color: var(--cor-petroleo);
   text-decoration: none;
   font-size: 13px;
   display: inline-flex;
@@ -584,7 +584,7 @@
 }
 
 .btn-table.edit:hover {
-  background: #2196f3;
+  background: var(--cor-petroleo);
   transform: scale(1.1);
 }
 

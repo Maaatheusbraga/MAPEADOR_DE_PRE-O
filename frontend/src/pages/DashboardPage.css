@@ -36,7 +36,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid var(--cor-petroleo);
 }
 
 .metric-card:hover {
@@ -49,11 +49,11 @@
 }
 
 .metric-card.info {
-  border-left-color: #2196f3;
+  border-left-color: var(--cor-petroleo);
 }
 
 .metric-card.money {
-  border-left-color: #ff9800;
+  border-left-color: var(--cor-laranja);
 }
 
 .metric-icon {
@@ -108,10 +108,10 @@
 }
 
 .action-card:hover {
-  background: #667eea;
-  border-color: #667eea;
+  background: var(--cor-petroleo);
+  border-color: var(--cor-petroleo);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(14, 85, 96, 0.28);
 }
 
 .action-card:hover .action-icon,
@@ -146,7 +146,7 @@
 }
 
 .dashboard-section.alert {
-  border-left: 4px solid #ff9800;
+  border-left: 4px solid var(--cor-laranja);
 }
 
 .dashboard-section h3 {
@@ -187,7 +187,7 @@
 .product-rank {
   font-size: 24px;
   font-weight: bold;
-  color: #667eea;
+  color: var(--cor-petroleo);
   min-width: 40px;
 }
 
@@ -258,7 +258,7 @@
 
 .btn-primary {
   padding: 14px 28px;
-  background: #667eea;
+  background: var(--cor-laranja);
   color: white;
   border: none;
   border-radius: 8px;
@@ -269,7 +269,7 @@
 }
 
 .btn-primary:hover {
-  background: #5568d3;
+  background: var(--cor-laranja-hover);
 }
 
 /* Loading & Error */

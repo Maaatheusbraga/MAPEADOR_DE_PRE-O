@@ -62,7 +62,7 @@
 
 .btn-novo {
   padding: 14px 28px;
-  background: #4caf50;
+  background: var(--cor-laranja);
   color: white;
   border: none;
   border-radius: 8px;
@@ -73,7 +73,7 @@
 }
 
 .btn-novo:hover {
-  background: #45a049;
+  background: var(--cor-laranja-hover);
 }
 
 .produtos-lista {
@@ -169,7 +169,7 @@
 
 .resultado-valor.destaque {
   font-size: 20px;
-  color: #667eea;
+  color: var(--cor-petroleo);
 }
 
 .produto-actions {

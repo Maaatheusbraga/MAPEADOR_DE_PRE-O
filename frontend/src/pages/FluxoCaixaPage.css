@@ -28,7 +28,7 @@
 
 .btn-novo {
   padding: 14px 24px;
-  background: #4caf50;
+  background: var(--cor-laranja);
   color: white;
   border: none;
   border-radius: 8px;
@@ -40,14 +40,14 @@
 }
 
 .btn-novo:hover {
-  background: #45a049;
+  background: var(--cor-laranja-hover);
 }
 
 .btn-secondary-action {
   padding: 14px 24px;
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--cor-petroleo);
+  border: 2px solid var(--cor-petroleo);
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
@@ -89,15 +89,15 @@
 }
 
 .saldo-card.banco {
-  border-left-color: #2196f3;
+  border-left-color: var(--cor-petroleo);
 }
 
 .saldo-card.total {
-  border-left-color: #667eea;
+  border-left-color: var(--cor-petroleo);
 }
 
 .saldo-card.passivos {
-  border-left-color: #ff9800;
+  border-left-color: var(--cor-laranja);
 }
 
 .saldo-card.projetado {
@@ -161,11 +161,11 @@
 
 .view-toggle button:hover {
   background: #f8f9fa;
-  color: #667eea;
+  color: var(--cor-petroleo);
 }
 
 .view-toggle button.active {
-  background: #667eea;
+  background: var(--cor-petroleo);
   color: white;
 }
 
@@ -209,7 +209,7 @@
 }
 
 .resumo-mov .saldo {
-  color: #667eea;
+  color: var(--cor-petroleo);
 }
 
 .movimentacoes-list {
@@ -327,7 +327,7 @@
   padding: 16px;
   background: #fff3e0;
   border-radius: 10px;
-  border-left: 4px solid #ff9800;
+  border-left: 4px solid var(--cor-laranja);
   transition: all 0.3s;
 }
 
@@ -374,7 +374,7 @@
 .passivo-valor {
   font-size: 20px;
   font-weight: bold;
-  color: #ff9800;
+  color: var(--cor-laranja);
   font-family: 'Courier New', monospace;
 }
 
@@ -503,7 +503,7 @@
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--cor-petroleo);
 }
 
 .radio-group {
@@ -523,7 +523,7 @@
 }
 
 .radio-label:hover {
-  border-color: #667eea;
+  border-color: var(--cor-petroleo);
   background: #f8f9fa;
 }
 
@@ -571,18 +571,18 @@
 }
 
 .btn-primary {
-  background: #667eea;
+  background: var(--cor-laranja);
   color: white;
 }
 
 .btn-primary:hover {
-  background: #5568d3;
+  background: var(--cor-laranja-hover);
 }
 
 .btn-secondary {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--cor-petroleo);
+  border: 2px solid var(--cor-petroleo);
 }
 
 .btn-secondary:hover {

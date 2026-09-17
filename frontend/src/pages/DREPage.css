@@ -23,7 +23,7 @@
 
 .btn-novo {
   padding: 14px 24px;
-  background: #4caf50;
+  background: var(--cor-laranja);
   color: white;
   border: none;
   border-radius: 8px;
@@ -35,7 +35,7 @@
 }
 
 .btn-novo:hover {
-  background: #45a049;
+  background: var(--cor-laranja-hover);
 }
 
 /* Resumo Cards */
@@ -66,11 +66,11 @@
 }
 
 .resumo-card.lucro {
-  border-left-color: #2196f3;
+  border-left-color: var(--cor-petroleo);
 }
 
 .resumo-card.margem {
-  border-left-color: #ff9800;
+  border-left-color: var(--cor-laranja);
 }
 
 .resumo-card .card-icon {
@@ -103,7 +103,7 @@
 }
 
 .dre-table thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradiente-marca);
   color: white;
 }
 
@@ -158,7 +158,7 @@
 
 .dre-table .total-row {
   background: #f8f9fa;
-  border-top: 3px solid #667eea;
+  border-top: 3px solid var(--cor-petroleo);
   font-weight: 600;
 }
 
@@ -272,7 +272,7 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--cor-petroleo);
 }
 
 .form-group small {
@@ -311,18 +311,18 @@
 }
 
 .btn-primary {
-  background: #667eea;
+  background: var(--cor-laranja);
   color: white;
 }
 
 .btn-primary:hover {
-  background: #5568d3;
+  background: var(--cor-laranja-hover);
 }
 
 .btn-secondary {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--cor-petroleo);
+  border: 2px solid var(--cor-petroleo);
 }
 
 .btn-secondary:hover {
