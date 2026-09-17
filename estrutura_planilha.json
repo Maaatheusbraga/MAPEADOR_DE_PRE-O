@@ -1,0 +1,3573 @@
+{
+  "arquivo": "Planilha-----Forza--Club-----Versão--Final (1).xlsx",
+  "abas": [
+    {
+      "nome": "Mineração",
+      "linhas": 61,
+      "colunas": 14,
+      "cabecalhos": [],
+      "formulas": [
+        {
+          "celula": "F10",
+          "linha": 10,
+          "coluna": "F",
+          "formula": "=E10*$C$5"
+        },
+        {
+          "celula": "G10",
+          "linha": 10,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H10",
+          "linha": 10,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I10",
+          "linha": 10,
+          "coluna": "I",
+          "formula": "=E10*$C$6"
+        },
+        {
+          "celula": "J10",
+          "linha": 10,
+          "coluna": "J",
+          "formula": "=IFERROR((E10-D10-F10-G10-H10-I10)/E10,0)"
+        },
+        {
+          "celula": "K10",
+          "linha": 10,
+          "coluna": "K",
+          "formula": "=E10*$C$3"
+        },
+        {
+          "celula": "L10",
+          "linha": 10,
+          "coluna": "L",
+          "formula": "=IFERROR((E10-D10-F10-G10-H10-I10-K10)/E10,0)"
+        },
+        {
+          "celula": "F11",
+          "linha": 11,
+          "coluna": "F",
+          "formula": "=E11*$C$5"
+        },
+        {
+          "celula": "G11",
+          "linha": 11,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H11",
+          "linha": 11,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I11",
+          "linha": 11,
+          "coluna": "I",
+          "formula": "=E11*$C$6"
+        },
+        {
+          "celula": "J11",
+          "linha": 11,
+          "coluna": "J",
+          "formula": "=IFERROR((E11-D11-F11-G11-H11-I11)/E11,0)"
+        },
+        {
+          "celula": "K11",
+          "linha": 11,
+          "coluna": "K",
+          "formula": "=E11*$C$3"
+        },
+        {
+          "celula": "L11",
+          "linha": 11,
+          "coluna": "L",
+          "formula": "=IFERROR((E11-D11-F11-G11-H11-I11-K11)/E11,0)"
+        },
+        {
+          "celula": "F12",
+          "linha": 12,
+          "coluna": "F",
+          "formula": "=E12*$C$5"
+        },
+        {
+          "celula": "G12",
+          "linha": 12,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H12",
+          "linha": 12,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I12",
+          "linha": 12,
+          "coluna": "I",
+          "formula": "=E12*$C$6"
+        },
+        {
+          "celula": "J12",
+          "linha": 12,
+          "coluna": "J",
+          "formula": "=IFERROR((E12-D12-F12-G12-H12-I12)/E12,0)"
+        },
+        {
+          "celula": "K12",
+          "linha": 12,
+          "coluna": "K",
+          "formula": "=E12*$C$3"
+        },
+        {
+          "celula": "L12",
+          "linha": 12,
+          "coluna": "L",
+          "formula": "=IFERROR((E12-D12-F12-G12-H12-I12-K12)/E12,0)"
+        },
+        {
+          "celula": "F13",
+          "linha": 13,
+          "coluna": "F",
+          "formula": "=E13*$C$5"
+        },
+        {
+          "celula": "G13",
+          "linha": 13,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H13",
+          "linha": 13,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I13",
+          "linha": 13,
+          "coluna": "I",
+          "formula": "=E13*$C$6"
+        },
+        {
+          "celula": "J13",
+          "linha": 13,
+          "coluna": "J",
+          "formula": "=IFERROR((E13-D13-F13-G13-H13-I13)/E13,0)"
+        },
+        {
+          "celula": "K13",
+          "linha": 13,
+          "coluna": "K",
+          "formula": "=E13*$C$3"
+        },
+        {
+          "celula": "L13",
+          "linha": 13,
+          "coluna": "L",
+          "formula": "=IFERROR((E13-D13-F13-G13-H13-I13-K13)/E13,0)"
+        },
+        {
+          "celula": "F14",
+          "linha": 14,
+          "coluna": "F",
+          "formula": "=E14*$C$5"
+        },
+        {
+          "celula": "G14",
+          "linha": 14,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H14",
+          "linha": 14,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I14",
+          "linha": 14,
+          "coluna": "I",
+          "formula": "=E14*$C$6"
+        },
+        {
+          "celula": "J14",
+          "linha": 14,
+          "coluna": "J",
+          "formula": "=IFERROR((E14-D14-F14-G14-H14-I14)/E14,0)"
+        },
+        {
+          "celula": "K14",
+          "linha": 14,
+          "coluna": "K",
+          "formula": "=E14*$C$3"
+        },
+        {
+          "celula": "L14",
+          "linha": 14,
+          "coluna": "L",
+          "formula": "=IFERROR((E14-D14-F14-G14-H14-I14-K14)/E14,0)"
+        },
+        {
+          "celula": "F15",
+          "linha": 15,
+          "coluna": "F",
+          "formula": "=E15*$C$5"
+        },
+        {
+          "celula": "G15",
+          "linha": 15,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H15",
+          "linha": 15,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I15",
+          "linha": 15,
+          "coluna": "I",
+          "formula": "=E15*$C$6"
+        },
+        {
+          "celula": "J15",
+          "linha": 15,
+          "coluna": "J",
+          "formula": "=IFERROR((E15-D15-F15-G15-H15-I15)/E15,0)"
+        },
+        {
+          "celula": "K15",
+          "linha": 15,
+          "coluna": "K",
+          "formula": "=E15*$C$3"
+        },
+        {
+          "celula": "L15",
+          "linha": 15,
+          "coluna": "L",
+          "formula": "=IFERROR((E15-D15-F15-G15-H15-I15-K15)/E15,0)"
+        },
+        {
+          "celula": "F16",
+          "linha": 16,
+          "coluna": "F",
+          "formula": "=E16*$C$5"
+        },
+        {
+          "celula": "G16",
+          "linha": 16,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H16",
+          "linha": 16,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I16",
+          "linha": 16,
+          "coluna": "I",
+          "formula": "=E16*$C$6"
+        },
+        {
+          "celula": "J16",
+          "linha": 16,
+          "coluna": "J",
+          "formula": "=IFERROR((E16-D16-F16-G16-H16-I16)/E16,0)"
+        },
+        {
+          "celula": "K16",
+          "linha": 16,
+          "coluna": "K",
+          "formula": "=E16*$C$3"
+        },
+        {
+          "celula": "L16",
+          "linha": 16,
+          "coluna": "L",
+          "formula": "=IFERROR((E16-D16-F16-G16-H16-I16-K16)/E16,0)"
+        },
+        {
+          "celula": "F17",
+          "linha": 17,
+          "coluna": "F",
+          "formula": "=E17*$C$5"
+        },
+        {
+          "celula": "G17",
+          "linha": 17,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H17",
+          "linha": 17,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I17",
+          "linha": 17,
+          "coluna": "I",
+          "formula": "=E17*$C$6"
+        },
+        {
+          "celula": "J17",
+          "linha": 17,
+          "coluna": "J",
+          "formula": "=IFERROR((E17-D17-F17-G17-H17-I17)/E17,0)"
+        },
+        {
+          "celula": "K17",
+          "linha": 17,
+          "coluna": "K",
+          "formula": "=E17*$C$3"
+        },
+        {
+          "celula": "L17",
+          "linha": 17,
+          "coluna": "L",
+          "formula": "=IFERROR((E17-D17-F17-G17-H17-I17-K17)/E17,0)"
+        },
+        {
+          "celula": "F18",
+          "linha": 18,
+          "coluna": "F",
+          "formula": "=E18*$C$5"
+        },
+        {
+          "celula": "G18",
+          "linha": 18,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H18",
+          "linha": 18,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I18",
+          "linha": 18,
+          "coluna": "I",
+          "formula": "=E18*$C$6"
+        },
+        {
+          "celula": "J18",
+          "linha": 18,
+          "coluna": "J",
+          "formula": "=IFERROR((E18-D18-F18-G18-H18-I18)/E18,0)"
+        },
+        {
+          "celula": "K18",
+          "linha": 18,
+          "coluna": "K",
+          "formula": "=E18*$C$3"
+        },
+        {
+          "celula": "L18",
+          "linha": 18,
+          "coluna": "L",
+          "formula": "=IFERROR((E18-D18-F18-G18-H18-I18-K18)/E18,0)"
+        },
+        {
+          "celula": "F19",
+          "linha": 19,
+          "coluna": "F",
+          "formula": "=E19*$C$5"
+        },
+        {
+          "celula": "G19",
+          "linha": 19,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H19",
+          "linha": 19,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I19",
+          "linha": 19,
+          "coluna": "I",
+          "formula": "=E19*$C$6"
+        },
+        {
+          "celula": "J19",
+          "linha": 19,
+          "coluna": "J",
+          "formula": "=IFERROR((E19-D19-F19-G19-H19-I19)/E19,0)"
+        },
+        {
+          "celula": "K19",
+          "linha": 19,
+          "coluna": "K",
+          "formula": "=E19*$C$3"
+        },
+        {
+          "celula": "L19",
+          "linha": 19,
+          "coluna": "L",
+          "formula": "=IFERROR((E19-D19-F19-G19-H19-I19-K19)/E19,0)"
+        },
+        {
+          "celula": "F20",
+          "linha": 20,
+          "coluna": "F",
+          "formula": "=E20*$C$5"
+        },
+        {
+          "celula": "G20",
+          "linha": 20,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H20",
+          "linha": 20,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I20",
+          "linha": 20,
+          "coluna": "I",
+          "formula": "=E20*$C$6"
+        },
+        {
+          "celula": "J20",
+          "linha": 20,
+          "coluna": "J",
+          "formula": "=IFERROR((E20-D20-F20-G20-H20-I20)/E20,0)"
+        },
+        {
+          "celula": "K20",
+          "linha": 20,
+          "coluna": "K",
+          "formula": "=E20*$C$3"
+        },
+        {
+          "celula": "L20",
+          "linha": 20,
+          "coluna": "L",
+          "formula": "=IFERROR((E20-D20-F20-G20-H20-I20-K20)/E20,0)"
+        },
+        {
+          "celula": "F21",
+          "linha": 21,
+          "coluna": "F",
+          "formula": "=E21*$C$5"
+        },
+        {
+          "celula": "G21",
+          "linha": 21,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H21",
+          "linha": 21,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I21",
+          "linha": 21,
+          "coluna": "I",
+          "formula": "=E21*$C$6"
+        },
+        {
+          "celula": "J21",
+          "linha": 21,
+          "coluna": "J",
+          "formula": "=IFERROR((E21-D21-F21-G21-H21-I21)/E21,0)"
+        },
+        {
+          "celula": "K21",
+          "linha": 21,
+          "coluna": "K",
+          "formula": "=E21*$C$3"
+        },
+        {
+          "celula": "L21",
+          "linha": 21,
+          "coluna": "L",
+          "formula": "=IFERROR((E21-D21-F21-G21-H21-I21-K21)/E21,0)"
+        },
+        {
+          "celula": "F22",
+          "linha": 22,
+          "coluna": "F",
+          "formula": "=E22*$C$5"
+        },
+        {
+          "celula": "G22",
+          "linha": 22,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H22",
+          "linha": 22,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I22",
+          "linha": 22,
+          "coluna": "I",
+          "formula": "=E22*$C$6"
+        },
+        {
+          "celula": "J22",
+          "linha": 22,
+          "coluna": "J",
+          "formula": "=IFERROR((E22-D22-F22-G22-H22-I22)/E22,0)"
+        },
+        {
+          "celula": "K22",
+          "linha": 22,
+          "coluna": "K",
+          "formula": "=E22*$C$3"
+        },
+        {
+          "celula": "L22",
+          "linha": 22,
+          "coluna": "L",
+          "formula": "=IFERROR((E22-D22-F22-G22-H22-I22-K22)/E22,0)"
+        },
+        {
+          "celula": "F23",
+          "linha": 23,
+          "coluna": "F",
+          "formula": "=E23*$C$5"
+        },
+        {
+          "celula": "G23",
+          "linha": 23,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H23",
+          "linha": 23,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I23",
+          "linha": 23,
+          "coluna": "I",
+          "formula": "=E23*$C$6"
+        },
+        {
+          "celula": "J23",
+          "linha": 23,
+          "coluna": "J",
+          "formula": "=IFERROR((E23-D23-F23-G23-H23-I23)/E23,0)"
+        },
+        {
+          "celula": "K23",
+          "linha": 23,
+          "coluna": "K",
+          "formula": "=E23*$C$3"
+        },
+        {
+          "celula": "L23",
+          "linha": 23,
+          "coluna": "L",
+          "formula": "=IFERROR((E23-D23-F23-G23-H23-I23-K23)/E23,0)"
+        },
+        {
+          "celula": "F24",
+          "linha": 24,
+          "coluna": "F",
+          "formula": "=E24*$C$5"
+        },
+        {
+          "celula": "G24",
+          "linha": 24,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H24",
+          "linha": 24,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I24",
+          "linha": 24,
+          "coluna": "I",
+          "formula": "=E24*$C$6"
+        },
+        {
+          "celula": "J24",
+          "linha": 24,
+          "coluna": "J",
+          "formula": "=IFERROR((E24-D24-F24-G24-H24-I24)/E24,0)"
+        },
+        {
+          "celula": "K24",
+          "linha": 24,
+          "coluna": "K",
+          "formula": "=E24*$C$3"
+        },
+        {
+          "celula": "L24",
+          "linha": 24,
+          "coluna": "L",
+          "formula": "=IFERROR((E24-D24-F24-G24-H24-I24-K24)/E24,0)"
+        },
+        {
+          "celula": "F25",
+          "linha": 25,
+          "coluna": "F",
+          "formula": "=E25*$C$5"
+        },
+        {
+          "celula": "G25",
+          "linha": 25,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H25",
+          "linha": 25,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I25",
+          "linha": 25,
+          "coluna": "I",
+          "formula": "=E25*$C$6"
+        },
+        {
+          "celula": "J25",
+          "linha": 25,
+          "coluna": "J",
+          "formula": "=IFERROR((E25-D25-F25-G25-H25-I25)/E25,0)"
+        },
+        {
+          "celula": "K25",
+          "linha": 25,
+          "coluna": "K",
+          "formula": "=E25*$C$3"
+        },
+        {
+          "celula": "L25",
+          "linha": 25,
+          "coluna": "L",
+          "formula": "=IFERROR((E25-D25-F25-G25-H25-I25-K25)/E25,0)"
+        },
+        {
+          "celula": "F26",
+          "linha": 26,
+          "coluna": "F",
+          "formula": "=E26*$C$5"
+        },
+        {
+          "celula": "G26",
+          "linha": 26,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H26",
+          "linha": 26,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I26",
+          "linha": 26,
+          "coluna": "I",
+          "formula": "=E26*$C$6"
+        },
+        {
+          "celula": "J26",
+          "linha": 26,
+          "coluna": "J",
+          "formula": "=IFERROR((E26-D26-F26-G26-H26-I26)/E26,0)"
+        },
+        {
+          "celula": "K26",
+          "linha": 26,
+          "coluna": "K",
+          "formula": "=E26*$C$3"
+        },
+        {
+          "celula": "L26",
+          "linha": 26,
+          "coluna": "L",
+          "formula": "=IFERROR((E26-D26-F26-G26-H26-I26-K26)/E26,0)"
+        },
+        {
+          "celula": "F27",
+          "linha": 27,
+          "coluna": "F",
+          "formula": "=E27*$C$5"
+        },
+        {
+          "celula": "G27",
+          "linha": 27,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H27",
+          "linha": 27,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I27",
+          "linha": 27,
+          "coluna": "I",
+          "formula": "=E27*$C$6"
+        },
+        {
+          "celula": "J27",
+          "linha": 27,
+          "coluna": "J",
+          "formula": "=IFERROR((E27-D27-F27-G27-H27-I27)/E27,0)"
+        },
+        {
+          "celula": "K27",
+          "linha": 27,
+          "coluna": "K",
+          "formula": "=E27*$C$3"
+        },
+        {
+          "celula": "L27",
+          "linha": 27,
+          "coluna": "L",
+          "formula": "=IFERROR((E27-D27-F27-G27-H27-I27-K27)/E27,0)"
+        },
+        {
+          "celula": "F28",
+          "linha": 28,
+          "coluna": "F",
+          "formula": "=E28*$C$5"
+        },
+        {
+          "celula": "G28",
+          "linha": 28,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H28",
+          "linha": 28,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I28",
+          "linha": 28,
+          "coluna": "I",
+          "formula": "=E28*$C$6"
+        },
+        {
+          "celula": "J28",
+          "linha": 28,
+          "coluna": "J",
+          "formula": "=IFERROR((E28-D28-F28-G28-H28-I28)/E28,0)"
+        },
+        {
+          "celula": "K28",
+          "linha": 28,
+          "coluna": "K",
+          "formula": "=E28*$C$3"
+        },
+        {
+          "celula": "L28",
+          "linha": 28,
+          "coluna": "L",
+          "formula": "=IFERROR((E28-D28-F28-G28-H28-I28-K28)/E28,0)"
+        },
+        {
+          "celula": "F29",
+          "linha": 29,
+          "coluna": "F",
+          "formula": "=E29*$C$5"
+        },
+        {
+          "celula": "G29",
+          "linha": 29,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H29",
+          "linha": 29,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I29",
+          "linha": 29,
+          "coluna": "I",
+          "formula": "=E29*$C$6"
+        },
+        {
+          "celula": "J29",
+          "linha": 29,
+          "coluna": "J",
+          "formula": "=IFERROR((E29-D29-F29-G29-H29-I29)/E29,0)"
+        },
+        {
+          "celula": "K29",
+          "linha": 29,
+          "coluna": "K",
+          "formula": "=E29*$C$3"
+        },
+        {
+          "celula": "L29",
+          "linha": 29,
+          "coluna": "L",
+          "formula": "=IFERROR((E29-D29-F29-G29-H29-I29-K29)/E29,0)"
+        },
+        {
+          "celula": "F30",
+          "linha": 30,
+          "coluna": "F",
+          "formula": "=E30*$C$5"
+        },
+        {
+          "celula": "G30",
+          "linha": 30,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H30",
+          "linha": 30,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I30",
+          "linha": 30,
+          "coluna": "I",
+          "formula": "=E30*$C$6"
+        },
+        {
+          "celula": "J30",
+          "linha": 30,
+          "coluna": "J",
+          "formula": "=IFERROR((E30-D30-F30-G30-H30-I30)/E30,0)"
+        },
+        {
+          "celula": "K30",
+          "linha": 30,
+          "coluna": "K",
+          "formula": "=E30*$C$3"
+        },
+        {
+          "celula": "L30",
+          "linha": 30,
+          "coluna": "L",
+          "formula": "=IFERROR((E30-D30-F30-G30-H30-I30-K30)/E30,0)"
+        },
+        {
+          "celula": "F31",
+          "linha": 31,
+          "coluna": "F",
+          "formula": "=E31*$C$5"
+        },
+        {
+          "celula": "G31",
+          "linha": 31,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H31",
+          "linha": 31,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I31",
+          "linha": 31,
+          "coluna": "I",
+          "formula": "=E31*$C$6"
+        },
+        {
+          "celula": "J31",
+          "linha": 31,
+          "coluna": "J",
+          "formula": "=IFERROR((E31-D31-F31-G31-H31-I31)/E31,0)"
+        },
+        {
+          "celula": "K31",
+          "linha": 31,
+          "coluna": "K",
+          "formula": "=E31*$C$3"
+        },
+        {
+          "celula": "L31",
+          "linha": 31,
+          "coluna": "L",
+          "formula": "=IFERROR((E31-D31-F31-G31-H31-I31-K31)/E31,0)"
+        },
+        {
+          "celula": "F32",
+          "linha": 32,
+          "coluna": "F",
+          "formula": "=E32*$C$5"
+        },
+        {
+          "celula": "G32",
+          "linha": 32,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H32",
+          "linha": 32,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I32",
+          "linha": 32,
+          "coluna": "I",
+          "formula": "=E32*$C$6"
+        },
+        {
+          "celula": "J32",
+          "linha": 32,
+          "coluna": "J",
+          "formula": "=IFERROR((E32-D32-F32-G32-H32-I32)/E32,0)"
+        },
+        {
+          "celula": "K32",
+          "linha": 32,
+          "coluna": "K",
+          "formula": "=E32*$C$3"
+        },
+        {
+          "celula": "L32",
+          "linha": 32,
+          "coluna": "L",
+          "formula": "=IFERROR((E32-D32-F32-G32-H32-I32-K32)/E32,0)"
+        },
+        {
+          "celula": "F33",
+          "linha": 33,
+          "coluna": "F",
+          "formula": "=E33*$C$5"
+        },
+        {
+          "celula": "G33",
+          "linha": 33,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H33",
+          "linha": 33,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I33",
+          "linha": 33,
+          "coluna": "I",
+          "formula": "=E33*$C$6"
+        },
+        {
+          "celula": "J33",
+          "linha": 33,
+          "coluna": "J",
+          "formula": "=IFERROR((E33-D33-F33-G33-H33-I33)/E33,0)"
+        },
+        {
+          "celula": "K33",
+          "linha": 33,
+          "coluna": "K",
+          "formula": "=E33*$C$3"
+        },
+        {
+          "celula": "L33",
+          "linha": 33,
+          "coluna": "L",
+          "formula": "=IFERROR((E33-D33-F33-G33-H33-I33-K33)/E33,0)"
+        },
+        {
+          "celula": "F34",
+          "linha": 34,
+          "coluna": "F",
+          "formula": "=E34*$C$5"
+        },
+        {
+          "celula": "G34",
+          "linha": 34,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H34",
+          "linha": 34,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I34",
+          "linha": 34,
+          "coluna": "I",
+          "formula": "=E34*$C$6"
+        },
+        {
+          "celula": "J34",
+          "linha": 34,
+          "coluna": "J",
+          "formula": "=IFERROR((E34-D34-F34-G34-H34-I34)/E34,0)"
+        },
+        {
+          "celula": "K34",
+          "linha": 34,
+          "coluna": "K",
+          "formula": "=E34*$C$3"
+        },
+        {
+          "celula": "L34",
+          "linha": 34,
+          "coluna": "L",
+          "formula": "=IFERROR((E34-D34-F34-G34-H34-I34-K34)/E34,0)"
+        },
+        {
+          "celula": "F35",
+          "linha": 35,
+          "coluna": "F",
+          "formula": "=E35*$C$5"
+        },
+        {
+          "celula": "G35",
+          "linha": 35,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H35",
+          "linha": 35,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I35",
+          "linha": 35,
+          "coluna": "I",
+          "formula": "=E35*$C$6"
+        },
+        {
+          "celula": "J35",
+          "linha": 35,
+          "coluna": "J",
+          "formula": "=IFERROR((E35-D35-F35-G35-H35-I35)/E35,0)"
+        },
+        {
+          "celula": "K35",
+          "linha": 35,
+          "coluna": "K",
+          "formula": "=E35*$C$3"
+        },
+        {
+          "celula": "L35",
+          "linha": 35,
+          "coluna": "L",
+          "formula": "=IFERROR((E35-D35-F35-G35-H35-I35-K35)/E35,0)"
+        },
+        {
+          "celula": "F36",
+          "linha": 36,
+          "coluna": "F",
+          "formula": "=E36*$C$5"
+        },
+        {
+          "celula": "G36",
+          "linha": 36,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H36",
+          "linha": 36,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I36",
+          "linha": 36,
+          "coluna": "I",
+          "formula": "=E36*$C$6"
+        },
+        {
+          "celula": "J36",
+          "linha": 36,
+          "coluna": "J",
+          "formula": "=IFERROR((E36-D36-F36-G36-H36-I36)/E36,0)"
+        },
+        {
+          "celula": "K36",
+          "linha": 36,
+          "coluna": "K",
+          "formula": "=E36*$C$3"
+        },
+        {
+          "celula": "L36",
+          "linha": 36,
+          "coluna": "L",
+          "formula": "=IFERROR((E36-D36-F36-G36-H36-I36-K36)/E36,0)"
+        },
+        {
+          "celula": "F37",
+          "linha": 37,
+          "coluna": "F",
+          "formula": "=E37*$C$5"
+        },
+        {
+          "celula": "G37",
+          "linha": 37,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H37",
+          "linha": 37,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I37",
+          "linha": 37,
+          "coluna": "I",
+          "formula": "=E37*$C$6"
+        },
+        {
+          "celula": "J37",
+          "linha": 37,
+          "coluna": "J",
+          "formula": "=IFERROR((E37-D37-F37-G37-H37-I37)/E37,0)"
+        },
+        {
+          "celula": "K37",
+          "linha": 37,
+          "coluna": "K",
+          "formula": "=E37*$C$3"
+        },
+        {
+          "celula": "L37",
+          "linha": 37,
+          "coluna": "L",
+          "formula": "=IFERROR((E37-D37-F37-G37-H37-I37-K37)/E37,0)"
+        },
+        {
+          "celula": "F38",
+          "linha": 38,
+          "coluna": "F",
+          "formula": "=E38*$C$5"
+        },
+        {
+          "celula": "G38",
+          "linha": 38,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H38",
+          "linha": 38,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I38",
+          "linha": 38,
+          "coluna": "I",
+          "formula": "=E38*$C$6"
+        },
+        {
+          "celula": "J38",
+          "linha": 38,
+          "coluna": "J",
+          "formula": "=IFERROR((E38-D38-F38-G38-H38-I38)/E38,0)"
+        },
+        {
+          "celula": "K38",
+          "linha": 38,
+          "coluna": "K",
+          "formula": "=E38*$C$3"
+        },
+        {
+          "celula": "L38",
+          "linha": 38,
+          "coluna": "L",
+          "formula": "=IFERROR((E38-D38-F38-G38-H38-I38-K38)/E38,0)"
+        },
+        {
+          "celula": "F39",
+          "linha": 39,
+          "coluna": "F",
+          "formula": "=E39*$C$5"
+        },
+        {
+          "celula": "G39",
+          "linha": 39,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H39",
+          "linha": 39,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I39",
+          "linha": 39,
+          "coluna": "I",
+          "formula": "=E39*$C$6"
+        },
+        {
+          "celula": "J39",
+          "linha": 39,
+          "coluna": "J",
+          "formula": "=IFERROR((E39-D39-F39-G39-H39-I39)/E39,0)"
+        },
+        {
+          "celula": "K39",
+          "linha": 39,
+          "coluna": "K",
+          "formula": "=E39*$C$3"
+        },
+        {
+          "celula": "L39",
+          "linha": 39,
+          "coluna": "L",
+          "formula": "=IFERROR((E39-D39-F39-G39-H39-I39-K39)/E39,0)"
+        },
+        {
+          "celula": "F40",
+          "linha": 40,
+          "coluna": "F",
+          "formula": "=E40*$C$5"
+        },
+        {
+          "celula": "G40",
+          "linha": 40,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H40",
+          "linha": 40,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I40",
+          "linha": 40,
+          "coluna": "I",
+          "formula": "=E40*$C$6"
+        },
+        {
+          "celula": "J40",
+          "linha": 40,
+          "coluna": "J",
+          "formula": "=IFERROR((E40-D40-F40-G40-H40-I40)/E40,0)"
+        },
+        {
+          "celula": "K40",
+          "linha": 40,
+          "coluna": "K",
+          "formula": "=E40*$C$3"
+        },
+        {
+          "celula": "L40",
+          "linha": 40,
+          "coluna": "L",
+          "formula": "=IFERROR((E40-D40-F40-G40-H40-I40-K40)/E40,0)"
+        },
+        {
+          "celula": "F41",
+          "linha": 41,
+          "coluna": "F",
+          "formula": "=E41*$C$5"
+        },
+        {
+          "celula": "G41",
+          "linha": 41,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H41",
+          "linha": 41,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I41",
+          "linha": 41,
+          "coluna": "I",
+          "formula": "=E41*$C$6"
+        },
+        {
+          "celula": "J41",
+          "linha": 41,
+          "coluna": "J",
+          "formula": "=IFERROR((E41-D41-F41-G41-H41-I41)/E41,0)"
+        },
+        {
+          "celula": "K41",
+          "linha": 41,
+          "coluna": "K",
+          "formula": "=E41*$C$3"
+        },
+        {
+          "celula": "L41",
+          "linha": 41,
+          "coluna": "L",
+          "formula": "=IFERROR((E41-D41-F41-G41-H41-I41-K41)/E41,0)"
+        },
+        {
+          "celula": "F42",
+          "linha": 42,
+          "coluna": "F",
+          "formula": "=E42*$C$5"
+        },
+        {
+          "celula": "G42",
+          "linha": 42,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H42",
+          "linha": 42,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I42",
+          "linha": 42,
+          "coluna": "I",
+          "formula": "=E42*$C$6"
+        },
+        {
+          "celula": "J42",
+          "linha": 42,
+          "coluna": "J",
+          "formula": "=IFERROR((E42-D42-F42-G42-H42-I42)/E42,0)"
+        },
+        {
+          "celula": "K42",
+          "linha": 42,
+          "coluna": "K",
+          "formula": "=E42*$C$3"
+        },
+        {
+          "celula": "L42",
+          "linha": 42,
+          "coluna": "L",
+          "formula": "=IFERROR((E42-D42-F42-G42-H42-I42-K42)/E42,0)"
+        },
+        {
+          "celula": "F43",
+          "linha": 43,
+          "coluna": "F",
+          "formula": "=E43*$C$5"
+        },
+        {
+          "celula": "G43",
+          "linha": 43,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H43",
+          "linha": 43,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I43",
+          "linha": 43,
+          "coluna": "I",
+          "formula": "=E43*$C$6"
+        },
+        {
+          "celula": "J43",
+          "linha": 43,
+          "coluna": "J",
+          "formula": "=IFERROR((E43-D43-F43-G43-H43-I43)/E43,0)"
+        },
+        {
+          "celula": "K43",
+          "linha": 43,
+          "coluna": "K",
+          "formula": "=E43*$C$3"
+        },
+        {
+          "celula": "L43",
+          "linha": 43,
+          "coluna": "L",
+          "formula": "=IFERROR((E43-D43-F43-G43-H43-I43-K43)/E43,0)"
+        },
+        {
+          "celula": "F44",
+          "linha": 44,
+          "coluna": "F",
+          "formula": "=E44*$C$5"
+        },
+        {
+          "celula": "G44",
+          "linha": 44,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H44",
+          "linha": 44,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I44",
+          "linha": 44,
+          "coluna": "I",
+          "formula": "=E44*$C$6"
+        },
+        {
+          "celula": "J44",
+          "linha": 44,
+          "coluna": "J",
+          "formula": "=IFERROR((E44-D44-F44-G44-H44-I44)/E44,0)"
+        },
+        {
+          "celula": "K44",
+          "linha": 44,
+          "coluna": "K",
+          "formula": "=E44*$C$3"
+        },
+        {
+          "celula": "L44",
+          "linha": 44,
+          "coluna": "L",
+          "formula": "=IFERROR((E44-D44-F44-G44-H44-I44-K44)/E44,0)"
+        },
+        {
+          "celula": "F45",
+          "linha": 45,
+          "coluna": "F",
+          "formula": "=E45*$C$5"
+        },
+        {
+          "celula": "G45",
+          "linha": 45,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H45",
+          "linha": 45,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I45",
+          "linha": 45,
+          "coluna": "I",
+          "formula": "=E45*$C$6"
+        },
+        {
+          "celula": "J45",
+          "linha": 45,
+          "coluna": "J",
+          "formula": "=IFERROR((E45-D45-F45-G45-H45-I45)/E45,0)"
+        },
+        {
+          "celula": "K45",
+          "linha": 45,
+          "coluna": "K",
+          "formula": "=E45*$C$3"
+        },
+        {
+          "celula": "L45",
+          "linha": 45,
+          "coluna": "L",
+          "formula": "=IFERROR((E45-D45-F45-G45-H45-I45-K45)/E45,0)"
+        },
+        {
+          "celula": "F46",
+          "linha": 46,
+          "coluna": "F",
+          "formula": "=E46*$C$5"
+        },
+        {
+          "celula": "G46",
+          "linha": 46,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H46",
+          "linha": 46,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I46",
+          "linha": 46,
+          "coluna": "I",
+          "formula": "=E46*$C$6"
+        },
+        {
+          "celula": "J46",
+          "linha": 46,
+          "coluna": "J",
+          "formula": "=IFERROR((E46-D46-F46-G46-H46-I46)/E46,0)"
+        },
+        {
+          "celula": "K46",
+          "linha": 46,
+          "coluna": "K",
+          "formula": "=E46*$C$3"
+        },
+        {
+          "celula": "L46",
+          "linha": 46,
+          "coluna": "L",
+          "formula": "=IFERROR((E46-D46-F46-G46-H46-I46-K46)/E46,0)"
+        },
+        {
+          "celula": "F47",
+          "linha": 47,
+          "coluna": "F",
+          "formula": "=E47*$C$5"
+        },
+        {
+          "celula": "G47",
+          "linha": 47,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H47",
+          "linha": 47,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I47",
+          "linha": 47,
+          "coluna": "I",
+          "formula": "=E47*$C$6"
+        },
+        {
+          "celula": "J47",
+          "linha": 47,
+          "coluna": "J",
+          "formula": "=IFERROR((E47-D47-F47-G47-H47-I47)/E47,0)"
+        },
+        {
+          "celula": "K47",
+          "linha": 47,
+          "coluna": "K",
+          "formula": "=E47*$C$3"
+        },
+        {
+          "celula": "L47",
+          "linha": 47,
+          "coluna": "L",
+          "formula": "=IFERROR((E47-D47-F47-G47-H47-I47-K47)/E47,0)"
+        },
+        {
+          "celula": "F48",
+          "linha": 48,
+          "coluna": "F",
+          "formula": "=E48*$C$5"
+        },
+        {
+          "celula": "G48",
+          "linha": 48,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H48",
+          "linha": 48,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I48",
+          "linha": 48,
+          "coluna": "I",
+          "formula": "=E48*$C$6"
+        },
+        {
+          "celula": "J48",
+          "linha": 48,
+          "coluna": "J",
+          "formula": "=IFERROR((E48-D48-F48-G48-H48-I48)/E48,0)"
+        },
+        {
+          "celula": "K48",
+          "linha": 48,
+          "coluna": "K",
+          "formula": "=E48*$C$3"
+        },
+        {
+          "celula": "L48",
+          "linha": 48,
+          "coluna": "L",
+          "formula": "=IFERROR((E48-D48-F48-G48-H48-I48-K48)/E48,0)"
+        },
+        {
+          "celula": "F49",
+          "linha": 49,
+          "coluna": "F",
+          "formula": "=E49*$C$5"
+        },
+        {
+          "celula": "G49",
+          "linha": 49,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H49",
+          "linha": 49,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I49",
+          "linha": 49,
+          "coluna": "I",
+          "formula": "=E49*$C$6"
+        },
+        {
+          "celula": "J49",
+          "linha": 49,
+          "coluna": "J",
+          "formula": "=IFERROR((E49-D49-F49-G49-H49-I49)/E49,0)"
+        },
+        {
+          "celula": "K49",
+          "linha": 49,
+          "coluna": "K",
+          "formula": "=E49*$C$3"
+        },
+        {
+          "celula": "L49",
+          "linha": 49,
+          "coluna": "L",
+          "formula": "=IFERROR((E49-D49-F49-G49-H49-I49-K49)/E49,0)"
+        },
+        {
+          "celula": "F50",
+          "linha": 50,
+          "coluna": "F",
+          "formula": "=E50*$C$5"
+        },
+        {
+          "celula": "G50",
+          "linha": 50,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H50",
+          "linha": 50,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I50",
+          "linha": 50,
+          "coluna": "I",
+          "formula": "=E50*$C$6"
+        },
+        {
+          "celula": "J50",
+          "linha": 50,
+          "coluna": "J",
+          "formula": "=IFERROR((E50-D50-F50-G50-H50-I50)/E50,0)"
+        },
+        {
+          "celula": "K50",
+          "linha": 50,
+          "coluna": "K",
+          "formula": "=E50*$C$3"
+        },
+        {
+          "celula": "L50",
+          "linha": 50,
+          "coluna": "L",
+          "formula": "=IFERROR((E50-D50-F50-G50-H50-I50-K50)/E50,0)"
+        },
+        {
+          "celula": "F51",
+          "linha": 51,
+          "coluna": "F",
+          "formula": "=E51*$C$5"
+        },
+        {
+          "celula": "G51",
+          "linha": 51,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H51",
+          "linha": 51,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I51",
+          "linha": 51,
+          "coluna": "I",
+          "formula": "=E51*$C$6"
+        },
+        {
+          "celula": "J51",
+          "linha": 51,
+          "coluna": "J",
+          "formula": "=IFERROR((E51-D51-F51-G51-H51-I51)/E51,0)"
+        },
+        {
+          "celula": "K51",
+          "linha": 51,
+          "coluna": "K",
+          "formula": "=E51*$C$3"
+        },
+        {
+          "celula": "L51",
+          "linha": 51,
+          "coluna": "L",
+          "formula": "=IFERROR((E51-D51-F51-G51-H51-I51-K51)/E51,0)"
+        },
+        {
+          "celula": "F52",
+          "linha": 52,
+          "coluna": "F",
+          "formula": "=E52*$C$5"
+        },
+        {
+          "celula": "G52",
+          "linha": 52,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H52",
+          "linha": 52,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I52",
+          "linha": 52,
+          "coluna": "I",
+          "formula": "=E52*$C$6"
+        },
+        {
+          "celula": "J52",
+          "linha": 52,
+          "coluna": "J",
+          "formula": "=IFERROR((E52-D52-F52-G52-H52-I52)/E52,0)"
+        },
+        {
+          "celula": "K52",
+          "linha": 52,
+          "coluna": "K",
+          "formula": "=E52*$C$3"
+        },
+        {
+          "celula": "L52",
+          "linha": 52,
+          "coluna": "L",
+          "formula": "=IFERROR((E52-D52-F52-G52-H52-I52-K52)/E52,0)"
+        },
+        {
+          "celula": "F53",
+          "linha": 53,
+          "coluna": "F",
+          "formula": "=E53*$C$5"
+        },
+        {
+          "celula": "G53",
+          "linha": 53,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H53",
+          "linha": 53,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I53",
+          "linha": 53,
+          "coluna": "I",
+          "formula": "=E53*$C$6"
+        },
+        {
+          "celula": "J53",
+          "linha": 53,
+          "coluna": "J",
+          "formula": "=IFERROR((E53-D53-F53-G53-H53-I53)/E53,0)"
+        },
+        {
+          "celula": "K53",
+          "linha": 53,
+          "coluna": "K",
+          "formula": "=E53*$C$3"
+        },
+        {
+          "celula": "L53",
+          "linha": 53,
+          "coluna": "L",
+          "formula": "=IFERROR((E53-D53-F53-G53-H53-I53-K53)/E53,0)"
+        },
+        {
+          "celula": "F54",
+          "linha": 54,
+          "coluna": "F",
+          "formula": "=E54*$C$5"
+        },
+        {
+          "celula": "G54",
+          "linha": 54,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H54",
+          "linha": 54,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I54",
+          "linha": 54,
+          "coluna": "I",
+          "formula": "=E54*$C$6"
+        },
+        {
+          "celula": "J54",
+          "linha": 54,
+          "coluna": "J",
+          "formula": "=IFERROR((E54-D54-F54-G54-H54-I54)/E54,0)"
+        },
+        {
+          "celula": "K54",
+          "linha": 54,
+          "coluna": "K",
+          "formula": "=E54*$C$3"
+        },
+        {
+          "celula": "L54",
+          "linha": 54,
+          "coluna": "L",
+          "formula": "=IFERROR((E54-D54-F54-G54-H54-I54-K54)/E54,0)"
+        },
+        {
+          "celula": "F55",
+          "linha": 55,
+          "coluna": "F",
+          "formula": "=E55*$C$5"
+        },
+        {
+          "celula": "G55",
+          "linha": 55,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H55",
+          "linha": 55,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I55",
+          "linha": 55,
+          "coluna": "I",
+          "formula": "=E55*$C$6"
+        },
+        {
+          "celula": "J55",
+          "linha": 55,
+          "coluna": "J",
+          "formula": "=IFERROR((E55-D55-F55-G55-H55-I55)/E55,0)"
+        },
+        {
+          "celula": "K55",
+          "linha": 55,
+          "coluna": "K",
+          "formula": "=E55*$C$3"
+        },
+        {
+          "celula": "L55",
+          "linha": 55,
+          "coluna": "L",
+          "formula": "=IFERROR((E55-D55-F55-G55-H55-I55-K55)/E55,0)"
+        },
+        {
+          "celula": "F56",
+          "linha": 56,
+          "coluna": "F",
+          "formula": "=E56*$C$5"
+        },
+        {
+          "celula": "G56",
+          "linha": 56,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H56",
+          "linha": 56,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I56",
+          "linha": 56,
+          "coluna": "I",
+          "formula": "=E56*$C$6"
+        },
+        {
+          "celula": "J56",
+          "linha": 56,
+          "coluna": "J",
+          "formula": "=IFERROR((E56-D56-F56-G56-H56-I56)/E56,0)"
+        },
+        {
+          "celula": "K56",
+          "linha": 56,
+          "coluna": "K",
+          "formula": "=E56*$C$3"
+        },
+        {
+          "celula": "L56",
+          "linha": 56,
+          "coluna": "L",
+          "formula": "=IFERROR((E56-D56-F56-G56-H56-I56-K56)/E56,0)"
+        },
+        {
+          "celula": "F57",
+          "linha": 57,
+          "coluna": "F",
+          "formula": "=E57*$C$5"
+        },
+        {
+          "celula": "G57",
+          "linha": 57,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H57",
+          "linha": 57,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I57",
+          "linha": 57,
+          "coluna": "I",
+          "formula": "=E57*$C$6"
+        },
+        {
+          "celula": "J57",
+          "linha": 57,
+          "coluna": "J",
+          "formula": "=IFERROR((E57-D57-F57-G57-H57-I57)/E57,0)"
+        },
+        {
+          "celula": "K57",
+          "linha": 57,
+          "coluna": "K",
+          "formula": "=E57*$C$3"
+        },
+        {
+          "celula": "L57",
+          "linha": 57,
+          "coluna": "L",
+          "formula": "=IFERROR((E57-D57-F57-G57-H57-I57-K57)/E57,0)"
+        },
+        {
+          "celula": "F58",
+          "linha": 58,
+          "coluna": "F",
+          "formula": "=E58*$C$5"
+        },
+        {
+          "celula": "G58",
+          "linha": 58,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H58",
+          "linha": 58,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I58",
+          "linha": 58,
+          "coluna": "I",
+          "formula": "=E58*$C$6"
+        },
+        {
+          "celula": "J58",
+          "linha": 58,
+          "coluna": "J",
+          "formula": "=IFERROR((E58-D58-F58-G58-H58-I58)/E58,0)"
+        },
+        {
+          "celula": "K58",
+          "linha": 58,
+          "coluna": "K",
+          "formula": "=E58*$C$3"
+        },
+        {
+          "celula": "L58",
+          "linha": 58,
+          "coluna": "L",
+          "formula": "=IFERROR((E58-D58-F58-G58-H58-I58-K58)/E58,0)"
+        },
+        {
+          "celula": "F59",
+          "linha": 59,
+          "coluna": "F",
+          "formula": "=E59*$C$5"
+        },
+        {
+          "celula": "G59",
+          "linha": 59,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H59",
+          "linha": 59,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I59",
+          "linha": 59,
+          "coluna": "I",
+          "formula": "=E59*$C$6"
+        },
+        {
+          "celula": "J59",
+          "linha": 59,
+          "coluna": "J",
+          "formula": "=IFERROR((E59-D59-F59-G59-H59-I59)/E59,0)"
+        },
+        {
+          "celula": "K59",
+          "linha": 59,
+          "coluna": "K",
+          "formula": "=E59*$C$3"
+        },
+        {
+          "celula": "L59",
+          "linha": 59,
+          "coluna": "L",
+          "formula": "=IFERROR((E59-D59-F59-G59-H59-I59-K59)/E59,0)"
+        },
+        {
+          "celula": "F60",
+          "linha": 60,
+          "coluna": "F",
+          "formula": "=E60*$C$5"
+        },
+        {
+          "celula": "G60",
+          "linha": 60,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H60",
+          "linha": 60,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I60",
+          "linha": 60,
+          "coluna": "I",
+          "formula": "=E60*$C$6"
+        },
+        {
+          "celula": "J60",
+          "linha": 60,
+          "coluna": "J",
+          "formula": "=IFERROR((E60-D60-F60-G60-H60-I60)/E60,0)"
+        },
+        {
+          "celula": "K60",
+          "linha": 60,
+          "coluna": "K",
+          "formula": "=E60*$C$3"
+        },
+        {
+          "celula": "L60",
+          "linha": 60,
+          "coluna": "L",
+          "formula": "=IFERROR((E60-D60-F60-G60-H60-I60-K60)/E60,0)"
+        },
+        {
+          "celula": "F61",
+          "linha": 61,
+          "coluna": "F",
+          "formula": "=E61*$C$5"
+        },
+        {
+          "celula": "G61",
+          "linha": 61,
+          "coluna": "G",
+          "formula": "=$C$4"
+        },
+        {
+          "celula": "H61",
+          "linha": 61,
+          "coluna": "H",
+          "formula": "=$C$7"
+        },
+        {
+          "celula": "I61",
+          "linha": 61,
+          "coluna": "I",
+          "formula": "=E61*$C$6"
+        },
+        {
+          "celula": "J61",
+          "linha": 61,
+          "coluna": "J",
+          "formula": "=IFERROR((E61-D61-F61-G61-H61-I61)/E61,0)"
+        },
+        {
+          "celula": "K61",
+          "linha": 61,
+          "coluna": "K",
+          "formula": "=E61*$C$3"
+        },
+        {
+          "celula": "L61",
+          "linha": 61,
+          "coluna": "L",
+          "formula": "=IFERROR((E61-D61-F61-G61-H61-I61-K61)/E61,0)"
+        }
+      ],
+      "dados_exemplo": [
+        {
+          "B": "Premissas"
+        },
+        {
+          "B": "TACOS",
+          "C": "0.05"
+        },
+        {
+          "B": "Custo de Prep.",
+          "C": "1.3"
+        },
+        {
+          "B": "Comissão",
+          "D": "> CNPJ em SP, limite de 40k de isenção nos primeiros 3 meses. Após isso, renova por +2 meses com limite de até 20k se você investiu pelo menos 3,5% do faturamento em ads"
+        },
+        {
+          "B": "Alíquota de Imposto",
+          "C": "0.04"
+        },
+        {
+          "B": "Frete FBA",
+          "C": "6",
+          "D": "> Tarifa 0 nos primeiros 30 dias, após isso é 6 reais se no mês anterior você investiu pelo menos 3,5% do faturamento em ads"
+        },
+        {
+          "B": "Produto",
+          "C": "Fornecedor",
+          "D": "Custo Unitário",
+          "E": "Preço de venda",
+          "F": "Comissão",
+          "G": "Prep",
+          "H": "Frete",
+          "I": "Impostos",
+          "J": "Margem de Lucro",
+          "K": "Ads",
+          "L": "Margem pós ads"
+        },
+        {
+          "B": "Tábua Inox",
+          "C": "Utimix",
+          "D": "12.5",
+          "E": "33.9",
+          "F": "=E10*$C$5",
+          "G": "=$C$4",
+          "H": "=$C$7",
+          "I": "=E10*$C$6",
+          "J": "=IFERROR((E10-D10-F10-G10-H10-I10)/E10,0)",
+          "K": "=E10*$C$3",
+          "L": "=IFERROR((E10-D10-F10-G10-H10-I10-K10)/E10,0)"
+        }
+      ]
+    },
+    {
+      "nome": "DRE",
+      "linhas": 53,
+      "colunas": 36,
+      "cabecalhos": [],
+      "formulas": [
+        {
+          "celula": "E3",
+          "linha": 3,
+          "coluna": "E",
+          "formula": "=1+D3"
+        },
+        {
+          "celula": "F3",
+          "linha": 3,
+          "coluna": "F",
+          "formula": "=1+E3"
+        },
+        {
+          "celula": "G3",
+          "linha": 3,
+          "coluna": "G",
+          "formula": "=1+F3"
+        },
+        {
+          "celula": "H3",
+          "linha": 3,
+          "coluna": "H",
+          "formula": "=1+G3"
+        },
+        {
+          "celula": "I3",
+          "linha": 3,
+          "coluna": "I",
+          "formula": "=1+H3"
+        },
+        {
+          "celula": "J3",
+          "linha": 3,
+          "coluna": "J",
+          "formula": "=1+I3"
+        },
+        {
+          "celula": "K3",
+          "linha": 3,
+          "coluna": "K",
+          "formula": "=1+J3"
+        },
+        {
+          "celula": "L3",
+          "linha": 3,
+          "coluna": "L",
+          "formula": "=1+K3"
+        },
+        {
+          "celula": "M3",
+          "linha": 3,
+          "coluna": "M",
+          "formula": "=1+L3"
+        },
+        {
+          "celula": "N3",
+          "linha": 3,
+          "coluna": "N",
+          "formula": "=1+M3"
+        },
+        {
+          "celula": "O3",
+          "linha": 3,
+          "coluna": "O",
+          "formula": "=1+N3"
+        },
+        {
+          "celula": "P3",
+          "linha": 3,
+          "coluna": "P",
+          "formula": "=1+O3"
+        },
+        {
+          "celula": "Q3",
+          "linha": 3,
+          "coluna": "Q",
+          "formula": "=1+P3"
+        },
+        {
+          "celula": "R3",
+          "linha": 3,
+          "coluna": "R",
+          "formula": "=1+Q3"
+        },
+        {
+          "celula": "S3",
+          "linha": 3,
+          "coluna": "S",
+          "formula": "=1+R3"
+        },
+        {
+          "celula": "T3",
+          "linha": 3,
+          "coluna": "T",
+          "formula": "=1+S3"
+        },
+        {
+          "celula": "U3",
+          "linha": 3,
+          "coluna": "U",
+          "formula": "=1+T3"
+        },
+        {
+          "celula": "V3",
+          "linha": 3,
+          "coluna": "V",
+          "formula": "=1+U3"
+        },
+        {
+          "celula": "W3",
+          "linha": 3,
+          "coluna": "W",
+          "formula": "=1+V3"
+        },
+        {
+          "celula": "X3",
+          "linha": 3,
+          "coluna": "X",
+          "formula": "=1+W3"
+        },
+        {
+          "celula": "Y3",
+          "linha": 3,
+          "coluna": "Y",
+          "formula": "=1+X3"
+        },
+        {
+          "celula": "Z3",
+          "linha": 3,
+          "coluna": "Z",
+          "formula": "=1+Y3"
+        },
+        {
+          "celula": "AA3",
+          "linha": 3,
+          "coluna": "AA",
+          "formula": "=1+Z3"
+        },
+        {
+          "celula": "C6",
+          "linha": 6,
+          "coluna": "C",
+          "formula": "=SUM(D6:AA6)"
+        },
+        {
+          "celula": "C7",
+          "linha": 7,
+          "coluna": "C",
+          "formula": "=SUM(D7:AA7)"
+        },
+        {
+          "celula": "C8",
+          "linha": 8,
+          "coluna": "C",
+          "formula": "=SUM(D8:AA8)"
+        },
+        {
+          "celula": "C9",
+          "linha": 9,
+          "coluna": "C",
+          "formula": "=SUM(D9:AA9)"
+        },
+        {
+          "celula": "C10",
+          "linha": 10,
+          "coluna": "C",
+          "formula": "=SUM(D10:AA10)"
+        },
+        {
+          "celula": "C11",
+          "linha": 11,
+          "coluna": "C",
+          "formula": "=SUM(D11:AA11)"
+        },
+        {
+          "celula": "C12",
+          "linha": 12,
+          "coluna": "C",
+          "formula": "=SUM(D12:AA12)"
+        },
+        {
+          "celula": "C13",
+          "linha": 13,
+          "coluna": "C",
+          "formula": "=SUM(D13:AA13)"
+        },
+        {
+          "celula": "C14",
+          "linha": 14,
+          "coluna": "C",
+          "formula": "=SUM(D14:AA14)"
+        },
+        {
+          "celula": "C15",
+          "linha": 15,
+          "coluna": "C",
+          "formula": "=SUM(D15:AA15)"
+        },
+        {
+          "celula": "C16",
+          "linha": 16,
+          "coluna": "C",
+          "formula": "=SUM(D16:AA16)"
+        },
+        {
+          "celula": "D16",
+          "linha": 16,
+          "coluna": "D",
+          "formula": "=IFERROR(SUM(D7:D15),0)"
+        },
+        {
+          "celula": "E16",
+          "linha": 16,
+          "coluna": "E",
+          "formula": "=IFERROR(SUM(E7:E15),0)"
+        },
+        {
+          "celula": "F16",
+          "linha": 16,
+          "coluna": "F",
+          "formula": "=IFERROR(SUM(F7:F15),0)"
+        },
+        {
+          "celula": "G16",
+          "linha": 16,
+          "coluna": "G",
+          "formula": "=IFERROR(SUM(G7:G15),0)"
+        },
+        {
+          "celula": "H16",
+          "linha": 16,
+          "coluna": "H",
+          "formula": "=IFERROR(SUM(H7:H15),0)"
+        },
+        {
+          "celula": "I16",
+          "linha": 16,
+          "coluna": "I",
+          "formula": "=IFERROR(SUM(I7:I15),0)"
+        },
+        {
+          "celula": "J16",
+          "linha": 16,
+          "coluna": "J",
+          "formula": "=IFERROR(SUM(J7:J15),0)"
+        },
+        {
+          "celula": "K16",
+          "linha": 16,
+          "coluna": "K",
+          "formula": "=IFERROR(SUM(K7:K15),0)"
+        },
+        {
+          "celula": "L16",
+          "linha": 16,
+          "coluna": "L",
+          "formula": "=IFERROR(SUM(L7:L15),0)"
+        },
+        {
+          "celula": "M16",
+          "linha": 16,
+          "coluna": "M",
+          "formula": "=IFERROR(SUM(M7:M15),0)"
+        },
+        {
+          "celula": "N16",
+          "linha": 16,
+          "coluna": "N",
+          "formula": "=IFERROR(SUM(N7:N15),0)"
+        },
+        {
+          "celula": "O16",
+          "linha": 16,
+          "coluna": "O",
+          "formula": "=IFERROR(SUM(O7:O15),0)"
+        },
+        {
+          "celula": "P16",
+          "linha": 16,
+          "coluna": "P",
+          "formula": "=IFERROR(SUM(P7:P15),0)"
+        },
+        {
+          "celula": "Q16",
+          "linha": 16,
+          "coluna": "Q",
+          "formula": "=IFERROR(SUM(Q7:Q15),0)"
+        },
+        {
+          "celula": "R16",
+          "linha": 16,
+          "coluna": "R",
+          "formula": "=IFERROR(SUM(R7:R15),0)"
+        },
+        {
+          "celula": "S16",
+          "linha": 16,
+          "coluna": "S",
+          "formula": "=IFERROR(SUM(S7:S15),0)"
+        },
+        {
+          "celula": "T16",
+          "linha": 16,
+          "coluna": "T",
+          "formula": "=IFERROR(SUM(T7:T15),0)"
+        },
+        {
+          "celula": "U16",
+          "linha": 16,
+          "coluna": "U",
+          "formula": "=IFERROR(SUM(U7:U15),0)"
+        },
+        {
+          "celula": "V16",
+          "linha": 16,
+          "coluna": "V",
+          "formula": "=IFERROR(SUM(V7:V15),0)"
+        },
+        {
+          "celula": "W16",
+          "linha": 16,
+          "coluna": "W",
+          "formula": "=IFERROR(SUM(W7:W15),0)"
+        },
+        {
+          "celula": "X16",
+          "linha": 16,
+          "coluna": "X",
+          "formula": "=IFERROR(SUM(X7:X15),0)"
+        },
+        {
+          "celula": "Y16",
+          "linha": 16,
+          "coluna": "Y",
+          "formula": "=IFERROR(SUM(Y7:Y15),0)"
+        },
+        {
+          "celula": "Z16",
+          "linha": 16,
+          "coluna": "Z",
+          "formula": "=IFERROR(SUM(Z7:Z15),0)"
+        },
+        {
+          "celula": "AA16",
+          "linha": 16,
+          "coluna": "AA",
+          "formula": "=IFERROR(SUM(AA7:AA15),0)"
+        },
+        {
+          "celula": "C17",
+          "linha": 17,
+          "coluna": "C",
+          "formula": "=SUM(D17:AA17)"
+        },
+        {
+          "celula": "D17",
+          "linha": 17,
+          "coluna": "D",
+          "formula": "=D6-D16"
+        },
+        {
+          "celula": "E17",
+          "linha": 17,
+          "coluna": "E",
+          "formula": "=E6-E16"
+        },
+        {
+          "celula": "F17",
+          "linha": 17,
+          "coluna": "F",
+          "formula": "=F6-F16"
+        },
+        {
+          "celula": "G17",
+          "linha": 17,
+          "coluna": "G",
+          "formula": "=G6-G16"
+        },
+        {
+          "celula": "H17",
+          "linha": 17,
+          "coluna": "H",
+          "formula": "=H6-H16"
+        },
+        {
+          "celula": "I17",
+          "linha": 17,
+          "coluna": "I",
+          "formula": "=I6-I16"
+        },
+        {
+          "celula": "J17",
+          "linha": 17,
+          "coluna": "J",
+          "formula": "=J6-J16"
+        },
+        {
+          "celula": "K17",
+          "linha": 17,
+          "coluna": "K",
+          "formula": "=K6-K16"
+        },
+        {
+          "celula": "L17",
+          "linha": 17,
+          "coluna": "L",
+          "formula": "=L6-L16"
+        },
+        {
+          "celula": "M17",
+          "linha": 17,
+          "coluna": "M",
+          "formula": "=M6-M16"
+        },
+        {
+          "celula": "N17",
+          "linha": 17,
+          "coluna": "N",
+          "formula": "=N6-N16"
+        },
+        {
+          "celula": "O17",
+          "linha": 17,
+          "coluna": "O",
+          "formula": "=O6-O16"
+        },
+        {
+          "celula": "P17",
+          "linha": 17,
+          "coluna": "P",
+          "formula": "=P6-P16"
+        },
+        {
+          "celula": "Q17",
+          "linha": 17,
+          "coluna": "Q",
+          "formula": "=Q6-Q16"
+        },
+        {
+          "celula": "R17",
+          "linha": 17,
+          "coluna": "R",
+          "formula": "=R6-R16"
+        },
+        {
+          "celula": "S17",
+          "linha": 17,
+          "coluna": "S",
+          "formula": "=S6-S16"
+        },
+        {
+          "celula": "T17",
+          "linha": 17,
+          "coluna": "T",
+          "formula": "=T6-T16"
+        },
+        {
+          "celula": "U17",
+          "linha": 17,
+          "coluna": "U",
+          "formula": "=U6-U16"
+        },
+        {
+          "celula": "V17",
+          "linha": 17,
+          "coluna": "V",
+          "formula": "=V6-V16"
+        },
+        {
+          "celula": "W17",
+          "linha": 17,
+          "coluna": "W",
+          "formula": "=W6-W16"
+        },
+        {
+          "celula": "X17",
+          "linha": 17,
+          "coluna": "X",
+          "formula": "=X6-X16"
+        },
+        {
+          "celula": "Y17",
+          "linha": 17,
+          "coluna": "Y",
+          "formula": "=Y6-Y16"
+        },
+        {
+          "celula": "Z17",
+          "linha": 17,
+          "coluna": "Z",
+          "formula": "=Z6-Z16"
+        },
+        {
+          "celula": "AA17",
+          "linha": 17,
+          "coluna": "AA",
+          "formula": "=AA6-AA16"
+        },
+        {
+          "celula": "C18",
+          "linha": 18,
+          "coluna": "C",
+          "formula": "=IFERROR(C17/C6,0)"
+        },
+        {
+          "celula": "D18",
+          "linha": 18,
+          "coluna": "D",
+          "formula": "=IFERROR(D17/D6,0)"
+        },
+        {
+          "celula": "E18",
+          "linha": 18,
+          "coluna": "E",
+          "formula": "=IFERROR(E17/E6,0)"
+        },
+        {
+          "celula": "F18",
+          "linha": 18,
+          "coluna": "F",
+          "formula": "=IFERROR(F17/F6,0)"
+        },
+        {
+          "celula": "G18",
+          "linha": 18,
+          "coluna": "G",
+          "formula": "=IFERROR(G17/G6,0)"
+        },
+        {
+          "celula": "H18",
+          "linha": 18,
+          "coluna": "H",
+          "formula": "=IFERROR(H17/H6,0)"
+        },
+        {
+          "celula": "I18",
+          "linha": 18,
+          "coluna": "I",
+          "formula": "=IFERROR(I17/I6,0)"
+        },
+        {
+          "celula": "J18",
+          "linha": 18,
+          "coluna": "J",
+          "formula": "=IFERROR(J17/J6,0)"
+        },
+        {
+          "celula": "K18",
+          "linha": 18,
+          "coluna": "K",
+          "formula": "=IFERROR(K17/K6,0)"
+        },
+        {
+          "celula": "L18",
+          "linha": 18,
+          "coluna": "L",
+          "formula": "=IFERROR(L17/L6,0)"
+        },
+        {
+          "celula": "M18",
+          "linha": 18,
+          "coluna": "M",
+          "formula": "=IFERROR(M17/M6,0)"
+        },
+        {
+          "celula": "N18",
+          "linha": 18,
+          "coluna": "N",
+          "formula": "=IFERROR(N17/N6,0)"
+        },
+        {
+          "celula": "O18",
+          "linha": 18,
+          "coluna": "O",
+          "formula": "=IFERROR(O17/O6,0)"
+        },
+        {
+          "celula": "P18",
+          "linha": 18,
+          "coluna": "P",
+          "formula": "=IFERROR(P17/P6,0)"
+        },
+        {
+          "celula": "Q18",
+          "linha": 18,
+          "coluna": "Q",
+          "formula": "=IFERROR(Q17/Q6,0)"
+        },
+        {
+          "celula": "R18",
+          "linha": 18,
+          "coluna": "R",
+          "formula": "=IFERROR(R17/R6,0)"
+        },
+        {
+          "celula": "S18",
+          "linha": 18,
+          "coluna": "S",
+          "formula": "=IFERROR(S17/S6,0)"
+        },
+        {
+          "celula": "T18",
+          "linha": 18,
+          "coluna": "T",
+          "formula": "=IFERROR(T17/T6,0)"
+        },
+        {
+          "celula": "U18",
+          "linha": 18,
+          "coluna": "U",
+          "formula": "=IFERROR(U17/U6,0)"
+        },
+        {
+          "celula": "V18",
+          "linha": 18,
+          "coluna": "V",
+          "formula": "=IFERROR(V17/V6,0)"
+        },
+        {
+          "celula": "W18",
+          "linha": 18,
+          "coluna": "W",
+          "formula": "=IFERROR(W17/W6,0)"
+        },
+        {
+          "celula": "X18",
+          "linha": 18,
+          "coluna": "X",
+          "formula": "=IFERROR(X17/X6,0)"
+        },
+        {
+          "celula": "Y18",
+          "linha": 18,
+          "coluna": "Y",
+          "formula": "=IFERROR(Y17/Y6,0)"
+        },
+        {
+          "celula": "Z18",
+          "linha": 18,
+          "coluna": "Z",
+          "formula": "=IFERROR(Z17/Z6,0)"
+        },
+        {
+          "celula": "AA18",
+          "linha": 18,
+          "coluna": "AA",
+          "formula": "=IFERROR(AA17/AA6,0)"
+        },
+        {
+          "celula": "C20",
+          "linha": 20,
+          "coluna": "C",
+          "formula": "=SUM(D20:AA20)"
+        },
+        {
+          "celula": "C21",
+          "linha": 21,
+          "coluna": "C",
+          "formula": "=SUM(D21:AA21)"
+        },
+        {
+          "celula": "C22",
+          "linha": 22,
+          "coluna": "C",
+          "formula": "=SUM(D22:AA22)"
+        },
+        {
+          "celula": "C23",
+          "linha": 23,
+          "coluna": "C",
+          "formula": "=SUM(D23:AA23)"
+        },
+        {
+          "celula": "C24",
+          "linha": 24,
+          "coluna": "C",
+          "formula": "=SUM(D24:AA24)"
+        },
+        {
+          "celula": "C25",
+          "linha": 25,
+          "coluna": "C",
+          "formula": "=SUM(D25:AA25)"
+        },
+        {
+          "celula": "D25",
+          "linha": 25,
+          "coluna": "D",
+          "formula": "=SUM(D20:D24)"
+        },
+        {
+          "celula": "E25",
+          "linha": 25,
+          "coluna": "E",
+          "formula": "=SUM(E20:E24)"
+        },
+        {
+          "celula": "F25",
+          "linha": 25,
+          "coluna": "F",
+          "formula": "=SUM(F20:F24)"
+        },
+        {
+          "celula": "G25",
+          "linha": 25,
+          "coluna": "G",
+          "formula": "=SUM(G20:G24)"
+        },
+        {
+          "celula": "H25",
+          "linha": 25,
+          "coluna": "H",
+          "formula": "=SUM(H20:H24)"
+        },
+        {
+          "celula": "I25",
+          "linha": 25,
+          "coluna": "I",
+          "formula": "=SUM(I20:I24)"
+        },
+        {
+          "celula": "J25",
+          "linha": 25,
+          "coluna": "J",
+          "formula": "=SUM(J20:J24)"
+        },
+        {
+          "celula": "K25",
+          "linha": 25,
+          "coluna": "K",
+          "formula": "=SUM(K20:K24)"
+        },
+        {
+          "celula": "L25",
+          "linha": 25,
+          "coluna": "L",
+          "formula": "=SUM(L20:L24)"
+        },
+        {
+          "celula": "M25",
+          "linha": 25,
+          "coluna": "M",
+          "formula": "=SUM(M20:M24)"
+        },
+        {
+          "celula": "N25",
+          "linha": 25,
+          "coluna": "N",
+          "formula": "=SUM(N20:N24)"
+        },
+        {
+          "celula": "O25",
+          "linha": 25,
+          "coluna": "O",
+          "formula": "=SUM(O20:O24)"
+        },
+        {
+          "celula": "P25",
+          "linha": 25,
+          "coluna": "P",
+          "formula": "=SUM(P20:P24)"
+        },
+        {
+          "celula": "Q25",
+          "linha": 25,
+          "coluna": "Q",
+          "formula": "=SUM(Q20:Q24)"
+        },
+        {
+          "celula": "R25",
+          "linha": 25,
+          "coluna": "R",
+          "formula": "=SUM(R20:R24)"
+        },
+        {
+          "celula": "S25",
+          "linha": 25,
+          "coluna": "S",
+          "formula": "=SUM(S20:S24)"
+        },
+        {
+          "celula": "T25",
+          "linha": 25,
+          "coluna": "T",
+          "formula": "=SUM(T20:T24)"
+        },
+        {
+          "celula": "U25",
+          "linha": 25,
+          "coluna": "U",
+          "formula": "=SUM(U20:U24)"
+        },
+        {
+          "celula": "V25",
+          "linha": 25,
+          "coluna": "V",
+          "formula": "=SUM(V20:V24)"
+        },
+        {
+          "celula": "W25",
+          "linha": 25,
+          "coluna": "W",
+          "formula": "=SUM(W20:W24)"
+        },
+        {
+          "celula": "X25",
+          "linha": 25,
+          "coluna": "X",
+          "formula": "=SUM(X20:X24)"
+        },
+        {
+          "celula": "Y25",
+          "linha": 25,
+          "coluna": "Y",
+          "formula": "=SUM(Y20:Y24)"
+        },
+        {
+          "celula": "Z25",
+          "linha": 25,
+          "coluna": "Z",
+          "formula": "=SUM(Z20:Z24)"
+        },
+        {
+          "celula": "AA25",
+          "linha": 25,
+          "coluna": "AA",
+          "formula": "=SUM(AA20:AA24)"
+        },
+        {
+          "celula": "C26",
+          "linha": 26,
+          "coluna": "C",
+          "formula": "=SUM(D26:AA26)"
+        },
+        {
+          "celula": "D26",
+          "linha": 26,
+          "coluna": "D",
+          "formula": "=D17-D25"
+        },
+        {
+          "celula": "E26",
+          "linha": 26,
+          "coluna": "E",
+          "formula": "=E17-E25"
+        },
+        {
+          "celula": "F26",
+          "linha": 26,
+          "coluna": "F",
+          "formula": "=F17-F25"
+        },
+        {
+          "celula": "G26",
+          "linha": 26,
+          "coluna": "G",
+          "formula": "=G17-G25"
+        },
+        {
+          "celula": "H26",
+          "linha": 26,
+          "coluna": "H",
+          "formula": "=H17-H25"
+        },
+        {
+          "celula": "I26",
+          "linha": 26,
+          "coluna": "I",
+          "formula": "=I17-I25"
+        },
+        {
+          "celula": "J26",
+          "linha": 26,
+          "coluna": "J",
+          "formula": "=J17-J25"
+        },
+        {
+          "celula": "K26",
+          "linha": 26,
+          "coluna": "K",
+          "formula": "=K17-K25"
+        },
+        {
+          "celula": "L26",
+          "linha": 26,
+          "coluna": "L",
+          "formula": "=L17-L25"
+        },
+        {
+          "celula": "M26",
+          "linha": 26,
+          "coluna": "M",
+          "formula": "=M17-M25"
+        },
+        {
+          "celula": "N26",
+          "linha": 26,
+          "coluna": "N",
+          "formula": "=N17-N25"
+        },
+        {
+          "celula": "O26",
+          "linha": 26,
+          "coluna": "O",
+          "formula": "=O17-O25"
+        },
+        {
+          "celula": "P26",
+          "linha": 26,
+          "coluna": "P",
+          "formula": "=P17-P25"
+        },
+        {
+          "celula": "Q26",
+          "linha": 26,
+          "coluna": "Q",
+          "formula": "=Q17-Q25"
+        },
+        {
+          "celula": "R26",
+          "linha": 26,
+          "coluna": "R",
+          "formula": "=R17-R25"
+        },
+        {
+          "celula": "S26",
+          "linha": 26,
+          "coluna": "S",
+          "formula": "=S17-S25"
+        },
+        {
+          "celula": "T26",
+          "linha": 26,
+          "coluna": "T",
+          "formula": "=T17-T25"
+        },
+        {
+          "celula": "U26",
+          "linha": 26,
+          "coluna": "U",
+          "formula": "=U17-U25"
+        },
+        {
+          "celula": "V26",
+          "linha": 26,
+          "coluna": "V",
+          "formula": "=V17-V25"
+        },
+        {
+          "celula": "W26",
+          "linha": 26,
+          "coluna": "W",
+          "formula": "=W17-W25"
+        },
+        {
+          "celula": "X26",
+          "linha": 26,
+          "coluna": "X",
+          "formula": "=X17-X25"
+        },
+        {
+          "celula": "Y26",
+          "linha": 26,
+          "coluna": "Y",
+          "formula": "=Y17-Y25"
+        },
+        {
+          "celula": "Z26",
+          "linha": 26,
+          "coluna": "Z",
+          "formula": "=Z17-Z25"
+        },
+        {
+          "celula": "AA26",
+          "linha": 26,
+          "coluna": "AA",
+          "formula": "=AA17-AA25"
+        },
+        {
+          "celula": "C27",
+          "linha": 27,
+          "coluna": "C",
+          "formula": "=IFERROR(C26/C6,0)"
+        },
+        {
+          "celula": "D27",
+          "linha": 27,
+          "coluna": "D",
+          "formula": "=IFERROR(D26/D6,0)"
+        },
+        {
+          "celula": "E27",
+          "linha": 27,
+          "coluna": "E",
+          "formula": "=IFERROR(E26/E6,0)"
+        },
+        {
+          "celula": "F27",
+          "linha": 27,
+          "coluna": "F",
+          "formula": "=IFERROR(F26/F6,0)"
+        },
+        {
+          "celula": "G27",
+          "linha": 27,
+          "coluna": "G",
+          "formula": "=IFERROR(G26/G6,0)"
+        },
+        {
+          "celula": "H27",
+          "linha": 27,
+          "coluna": "H",
+          "formula": "=IFERROR(H26/H6,0)"
+        },
+        {
+          "celula": "I27",
+          "linha": 27,
+          "coluna": "I",
+          "formula": "=IFERROR(I26/I6,0)"
+        },
+        {
+          "celula": "J27",
+          "linha": 27,
+          "coluna": "J",
+          "formula": "=IFERROR(J26/J6,0)"
+        },
+        {
+          "celula": "K27",
+          "linha": 27,
+          "coluna": "K",
+          "formula": "=IFERROR(K26/K6,0)"
+        },
+        {
+          "celula": "L27",
+          "linha": 27,
+          "coluna": "L",
+          "formula": "=IFERROR(L26/L6,0)"
+        },
+        {
+          "celula": "M27",
+          "linha": 27,
+          "coluna": "M",
+          "formula": "=IFERROR(M26/M6,0)"
+        },
+        {
+          "celula": "N27",
+          "linha": 27,
+          "coluna": "N",
+          "formula": "=IFERROR(N26/N6,0)"
+        },
+        {
+          "celula": "O27",
+          "linha": 27,
+          "coluna": "O",
+          "formula": "=IFERROR(O26/O6,0)"
+        },
+        {
+          "celula": "P27",
+          "linha": 27,
+          "coluna": "P",
+          "formula": "=IFERROR(P26/P6,0)"
+        },
+        {
+          "celula": "Q27",
+          "linha": 27,
+          "coluna": "Q",
+          "formula": "=IFERROR(Q26/Q6,0)"
+        },
+        {
+          "celula": "R27",
+          "linha": 27,
+          "coluna": "R",
+          "formula": "=IFERROR(R26/R6,0)"
+        },
+        {
+          "celula": "S27",
+          "linha": 27,
+          "coluna": "S",
+          "formula": "=IFERROR(S26/S6,0)"
+        },
+        {
+          "celula": "T27",
+          "linha": 27,
+          "coluna": "T",
+          "formula": "=IFERROR(T26/T6,0)"
+        },
+        {
+          "celula": "U27",
+          "linha": 27,
+          "coluna": "U",
+          "formula": "=IFERROR(U26/U6,0)"
+        },
+        {
+          "celula": "V27",
+          "linha": 27,
+          "coluna": "V",
+          "formula": "=IFERROR(V26/V6,0)"
+        },
+        {
+          "celula": "W27",
+          "linha": 27,
+          "coluna": "W",
+          "formula": "=IFERROR(W26/W6,0)"
+        },
+        {
+          "celula": "X27",
+          "linha": 27,
+          "coluna": "X",
+          "formula": "=IFERROR(X26/X6,0)"
+        },
+        {
+          "celula": "Y27",
+          "linha": 27,
+          "coluna": "Y",
+          "formula": "=IFERROR(Y26/Y6,0)"
+        },
+        {
+          "celula": "Z27",
+          "linha": 27,
+          "coluna": "Z",
+          "formula": "=IFERROR(Z26/Z6,0)"
+        },
+        {
+          "celula": "AA27",
+          "linha": 27,
+          "coluna": "AA",
+          "formula": "=IFERROR(AA26/AA6,0)"
+        }
+      ],
+      "dados_exemplo": [
+        {
+          "D": "1",
+          "E": "=1+D3",
+          "F": "=1+E3",
+          "G": "=1+F3",
+          "H": "=1+G3",
+          "I": "=1+H3",
+          "J": "=1+I3",
+          "K": "=1+J3",
+          "L": "=1+K3",
+          "M": "=1+L3",
+          "N": "=1+M3",
+          "O": "=1+N3",
+          "P": "=1+O3",
+          "Q": "=1+P3",
+          "R": "=1+Q3",
+          "S": "=1+R3",
+          "T": "=1+S3",
+          "U": "=1+T3",
+          "V": "=1+U3",
+          "W": "=1+V3",
+          "X": "=1+W3",
+          "Y": "=1+X3",
+          "Z": "=1+Y3",
+          "AA": "=1+Z3"
+        },
+        {
+          "C": "Acumulado",
+          "E": "Q1",
+          "H": "Q2",
+          "K": "Q3",
+          "N": "Q4",
+          "Q": "Q5",
+          "T": "Q6",
+          "W": "Q7",
+          "Z": "Q8"
+        },
+        {
+          "D": "Outubro",
+          "E": "Novembro",
+          "F": "Dezembro",
+          "G": "Janeiro",
+          "H": "Fevereiro",
+          "I": "Março",
+          "J": "Abril",
+          "K": "Maio",
+          "L": "Junho",
+          "M": "Julho",
+          "N": "Agosto",
+          "O": "Setembro",
+          "P": "Outubro",
+          "Q": "Novembro",
+          "R": "Dezembro",
+          "S": "Janeiro",
+          "T": "Fevereiro",
+          "U": "Março",
+          "V": "Abril",
+          "W": "Maio",
+          "X": "Junho",
+          "Y": "Julho",
+          "Z": "Agosto",
+          "AA": "Setembro"
+        },
+        {
+          "B": "Faturamento",
+          "C": "=SUM(D6:AA6)"
+        },
+        {
+          "B": "Custo Frete FBA",
+          "C": "=SUM(D7:AA7)"
+        },
+        {
+          "B": "Comissão Amazon",
+          "C": "=SUM(D8:AA8)"
+        },
+        {
+          "B": "Promoções",
+          "C": "=SUM(D9:AA9)"
+        },
+        {
+          "B": "Taxa de Armazenagem",
+          "C": "=SUM(D10:AA10)"
+        }
+      ]
+    },
+    {
+      "nome": "Fluxo de Caixa",
+      "linhas": 53,
+      "colunas": 36,
+      "cabecalhos": [],
+      "formulas": [
+        {
+          "celula": "C17",
+          "linha": 17,
+          "coluna": "C",
+          "formula": "=SUM(C4:C16)"
+        },
+        {
+          "celula": "G17",
+          "linha": 17,
+          "coluna": "G",
+          "formula": "=SUM(G4:G16)"
+        }
+      ],
+      "dados_exemplo": [
+        {
+          "B": "Ciclo Atual",
+          "E": "Passivos"
+        },
+        {
+          "B": "Conta",
+          "C": "Fluxos",
+          "E": "Nome",
+          "F": "Data de Vencimento",
+          "G": "Valor"
+        },
+        {
+          "B": "Saldo Atual",
+          "E": "Imposto"
+        },
+        {
+          "B": "Caixa",
+          "E": "Fornecedor"
+        },
+        {
+          "E": "Prep. Center"
+        },
+        {
+          "E": "Contabilidade"
+        }
+      ]
+    },
+    {
+      "nome": "Lista de Fornecedores",
+      "linhas": 115,
+      "colunas": 14,
+      "cabecalhos": [],
+      "formulas": [],
+      "dados_exemplo": [
+        {
+          "B": "Fornecedor",
+          "C": "Site / Instagram",
+          "D": "Telefone"
+        },
+        {
+          "B": "Utimix",
+          "C": "https://www.utimix.com/",
+          "D": "(11) 95300-7505"
+        },
+        {
+          "B": "Zein",
+          "C": "https://www.zein.com.br/",
+          "D": "(11)94725-1366 > João"
+        },
+        {
+          "B": "Top Rio",
+          "C": "https://www.instagram.com/toprio_importadora_ofc/?hl=em",
+          "D": "(21) 97038-5924 > Giulia ou (11) 98637-9492 > Fernanda"
+        },
+        {
+          "B": "Destaq",
+          "C": "https://www.instagram.com/destaq_atacado/",
+          "D": "11 94903-4031 > Beatriz"
+        },
+        {
+          "B": "WEI Import",
+          "C": "https://weiimportoficial.com/",
+          "D": "1199863-6666"
+        },
+        {
+          "B": "Nipocenter",
+          "C": "https://www.atacadonipocenter.com.br/",
+          "D": "(11) 91924-3318 ou (11) 94462-3108 ou (11) 99344-8089",
+          "E": "> Comecem por esses em verde"
+        },
+        {
+          "B": "Imporiente",
+          "C": "https://www.instagram.com/imporiente_oficial/?hl=em",
+          "D": "(21) 98157-8830"
+        },
+        {
+          "B": "Keita",
+          "C": "https://www.keita.com.br/",
+          "D": "11 95233-1922"
+        }
+      ]
+    }
+  ],
+  "total_formulas": 554
+}

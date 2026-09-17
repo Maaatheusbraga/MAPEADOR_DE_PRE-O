@@ -1,0 +1,1055 @@
+{
+  "fornecedores": [
+    {
+      "id": 1,
+      "nome": "Utimix",
+      "site_instagram": "https://www.utimix.com/",
+      "telefone": "(11)95300-7505",
+      "observacoes": "",
+      "prioritario": true,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 2,
+      "nome": "Zein",
+      "site_instagram": "https://www.zein.com.br/",
+      "telefone": "(11)94725-1366 - João",
+      "observacoes": "",
+      "prioritario": true,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 3,
+      "nome": "Top Rio",
+      "site_instagram": "https://www.instagram.com/toprio_importadora_ofc/",
+      "telefone": "(21) 97038-5924 - Giulia",
+      "observacoes": "",
+      "prioritario": true,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 4,
+      "nome": "Nipocenter",
+      "site_instagram": "https://www.atacadaonipocenter.com.br/",
+      "telefone": "(11) 5584-3318",
+      "observacoes": "",
+      "prioritario": true,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 5,
+      "nome": "Imporiente",
+      "site_instagram": "https://www.instagram.com/imporiente.oficial/",
+      "telefone": "(11) 98198-8482",
+      "observacoes": "",
+      "prioritario": true,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 6,
+      "nome": "Keita",
+      "site_instagram": "https://www.instagram.com/keitaimportadora/",
+      "telefone": "(11) 93663-0302",
+      "observacoes": "",
+      "prioritario": true,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 7,
+      "nome": "Garden Produtos de Madeira",
+      "site_instagram": "https://www.gardenprodutosdemadeira.com/",
+      "telefone": "(26) 996-5311",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 8,
+      "nome": "Art Mixing",
+      "site_instagram": "https://linkpol.com.br/",
+      "telefone": "(71) 98397-0546",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 9,
+      "nome": "Alibaba",
+      "site_instagram": "https://portuguese.alibaba.com/",
+      "telefone": "(86) 571-8502-2088",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 10,
+      "nome": "AB Importações",
+      "site_instagram": "https://abimportacoes.com.br/",
+      "telefone": "(86) 00138-26433",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 11,
+      "nome": "Asia Rooms",
+      "site_instagram": "http://www.asiarooms.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 12,
+      "nome": "Ame.art",
+      "site_instagram": "https://www.instagram.com/ame.art.br/",
+      "telefone": "(16) 99308-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 13,
+      "nome": "Aluminum Fortaleza",
+      "site_instagram": "https://aluminumfortaleza.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 14,
+      "nome": "Amargate",
+      "site_instagram": "https://www.instagram.com/amargateoficial/",
+      "telefone": "(16) 99308-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 15,
+      "nome": "Americanas",
+      "site_instagram": "https://www.americanas.com.br/",
+      "telefone": "(11) 4004-3131 / (11) 99865-3621",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 16,
+      "nome": "ArtBrilhe",
+      "site_instagram": "https://www.instagram.com/Loja/artbrilhe/",
+      "telefone": "(81) 99943-9600",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 17,
+      "nome": "ArtPizza",
+      "site_instagram": "https://www.artpizza.com.br/",
+      "telefone": "(11) 2291-2272",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 18,
+      "nome": "Atacadão",
+      "site_instagram": "https://www.atacadao.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 19,
+      "nome": "Avulse",
+      "site_instagram": "http://www.avpec.com.br/",
+      "telefone": "(86) 0326-5909",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 20,
+      "nome": "Azi Jóias",
+      "site_instagram": "https://azimportadoraonline.com/",
+      "telefone": "(54) 99211-9408",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 21,
+      "nome": "Bellani Importadora",
+      "site_instagram": "https://www.instagram.com/bellaniimportadora/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 22,
+      "nome": "Brasaitec",
+      "site_instagram": "https://brasaitec.com.br/",
+      "telefone": "(11) 3834-4709",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 23,
+      "nome": "Bronze",
+      "site_instagram": "https://www.bronze.ind.br/",
+      "telefone": "(53) 4005-7023",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 24,
+      "nome": "Bussola para Rosa",
+      "site_instagram": "https://www.instagram.com/bussolapararosa/",
+      "telefone": "(11) 99146-5960",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 25,
+      "nome": "ENVOXX",
+      "site_instagram": "https://www.envoxx.br/",
+      "telefone": "(46)99206-4575",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 26,
+      "nome": "Brasil Distribuidora",
+      "site_instagram": "https://www.brasildistribuidora.com.br/",
+      "telefone": "(11) 98947-0096",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 27,
+      "nome": "Cabralisa",
+      "site_instagram": "https://www.cabralisa.com.br/",
+      "telefone": "(21) 2471-4170",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 28,
+      "nome": "Casalandia GB",
+      "site_instagram": "https://casalandia.com/",
+      "telefone": "(47) 99973-4165",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 29,
+      "nome": "Class Home",
+      "site_instagram": "https://www.classhome.br/",
+      "telefone": "(19) 3926-3113",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 30,
+      "nome": "Casas Bahia",
+      "site_instagram": "https://www.casasbahia.com.br/",
+      "telefone": "(11) 4002-8788",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 31,
+      "nome": "DM Toys",
+      "site_instagram": "https://dmtoys.com.br/",
+      "telefone": "(82) 2127-2078",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 32,
+      "nome": "Eleva (Koron)",
+      "site_instagram": "https://www.instagram.com/elevacs.magazine/",
+      "telefone": "(11) 98217-8887",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 33,
+      "nome": "Fabricante Blanquearte",
+      "site_instagram": "https://www.fabricanteblanquearte.com.br/",
+      "telefone": "(11) 97253-9845",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 34,
+      "nome": "Ferco (Kolors)",
+      "site_instagram": "https://ferrocolors.com.br/",
+      "telefone": "(51) 98405-0183",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 35,
+      "nome": "Fixa Loucas",
+      "site_instagram": "https://www.instagram.com/fixaloucas/",
+      "telefone": "(11) 96073-2754",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 36,
+      "nome": "Frato",
+      "site_instagram": "https://lojasfrato.vteximg.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 37,
+      "nome": "FWB",
+      "site_instagram": "https://www.fwb.com.br/",
+      "telefone": "(16) 99308-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 38,
+      "nome": "Geral Plasforma",
+      "site_instagram": "https://www.geralplasforma.com.br/",
+      "telefone": "(11) 2771-1837",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 39,
+      "nome": "GKS",
+      "site_instagram": "http://www.gks.ind.br/",
+      "telefone": "(11) 4178-6100",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 40,
+      "nome": "GLOempari",
+      "site_instagram": "https://www.gloempari.com.br/",
+      "telefone": "(11) 2267-5518 / (11) 97125-0000",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 41,
+      "nome": "GOLDshop",
+      "site_instagram": "https://www.instagram.com/goldshopimportacoes/",
+      "telefone": "(86) 99208-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 42,
+      "nome": "Grife Line",
+      "site_instagram": "https://grifeline.com/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 43,
+      "nome": "Home Design",
+      "site_instagram": "http://gadeashop.wixsite.com/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 44,
+      "nome": "Home Goods Importadora",
+      "site_instagram": "https://viallags.lojavirtualnuvem.com.br/",
+      "telefone": "(11) 2206-3036",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 45,
+      "nome": "House Time",
+      "site_instagram": "https://www.instagram.com/housetimebrasil/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 46,
+      "nome": "Irmãos Cremonte",
+      "site_instagram": "https://www.instagram.com/irmaoscremonte/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 47,
+      "nome": "Isolefe",
+      "site_instagram": "http://boykobichinhos.com.br/",
+      "telefone": "(11) 3533-6904",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 48,
+      "nome": "Import+",
+      "site_instagram": "https://importmais.com/",
+      "telefone": "(11) 99622-2020",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 49,
+      "nome": "Lojaskell",
+      "site_instagram": "https://www.lojaskell.com.br/",
+      "telefone": "(080) 318 8211",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 50,
+      "nome": "Maria Utilidades",
+      "site_instagram": "https://www.mariautilidades.com.br/",
+      "telefone": "(15) 3533-2274",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 51,
+      "nome": "MariaCortinovis",
+      "site_instagram": "https://www.instagram.com/mariacortinovis/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 52,
+      "nome": "Megatoy",
+      "site_instagram": "https://www.instagram.com/megatoy/",
+      "telefone": "(19) 3271-2179",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 53,
+      "nome": "Mix Atacado",
+      "site_instagram": "https://www.instagram.com/mixatacado/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 54,
+      "nome": "MR Injetados",
+      "site_instagram": "http://www.mrinjetados.com.br/",
+      "telefone": "(19) 3242-5171",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 55,
+      "nome": "Monte Líbano",
+      "site_instagram": "https://www.montelibano.com.br/",
+      "telefone": "(11) 3942-3775",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 56,
+      "nome": "M2R",
+      "site_instagram": "https://www.b2wmarketplace.com.br/",
+      "telefone": "(21) 2105-7991",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 57,
+      "nome": "Multlaser",
+      "site_instagram": "https://www.multilaser.com.br/",
+      "telefone": "(11) 2161-5656",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 58,
+      "nome": "Nautika",
+      "site_instagram": "https://www.nautika.com.br/",
+      "telefone": "(11) 2485-6832",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 59,
+      "nome": "Nelson",
+      "site_instagram": "https://www.nelson.ind.br/",
+      "telefone": "(47) 3535-5646",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 60,
+      "nome": "Niazi Importados",
+      "site_instagram": "https://www.instagram.com/niazi.importados/",
+      "telefone": "(11) 96862-2838",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 61,
+      "nome": "Nilson",
+      "site_instagram": "https://www.nilson.com.br/",
+      "telefone": "(11) 2413-2235",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 62,
+      "nome": "Noar",
+      "site_instagram": "https://noarvip.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 63,
+      "nome": "Pais & Filhos",
+      "site_instagram": "https://www.instagram.com/paisfilhos/",
+      "telefone": "(16) 99308-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 64,
+      "nome": "P & R Brinquedos",
+      "site_instagram": "https://www.perbrinquedos.com.br/",
+      "telefone": "(19) 99486-1337",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 65,
+      "nome": "Plasgel",
+      "site_instagram": "https://www.instagram.com/plasgelofc/",
+      "telefone": "(54) 3209-6444",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 66,
+      "nome": "Plast Bella Importadora",
+      "site_instagram": "https://www.instagram.com/plastbellaimportadora/",
+      "telefone": "(11) 97302-1627",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 67,
+      "nome": "Rox Home",
+      "site_instagram": "https://www.instagram.com/roxhome/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 68,
+      "nome": "Rox Master",
+      "site_instagram": "https://roxmaster.com.br/",
+      "telefone": "(19) 3484-6159",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 69,
+      "nome": "Rochedo",
+      "site_instagram": "https://www.rochedo.ind.br/",
+      "telefone": "(54) 3225-4900",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 70,
+      "nome": "Sony",
+      "site_instagram": "https://www.sony.com.br/",
+      "telefone": "(11) 2065-6777",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 71,
+      "nome": "Roda",
+      "site_instagram": "https://gpollock.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 72,
+      "nome": "Salvia",
+      "site_instagram": "https://www.salvia.ind.br/",
+      "telefone": "(47) 3026-0404",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 73,
+      "nome": "Salvia Cachita Import",
+      "site_instagram": "https://www.instagram.com/salviacachitaimport/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 74,
+      "nome": "SORVAIO",
+      "site_instagram": "https://www.sorvaio.com/",
+      "telefone": "(16)99306-3073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 75,
+      "nome": "StarLux",
+      "site_instagram": "https://www.instagram.com/starluxbr/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 76,
+      "nome": "TOP CASA",
+      "site_instagram": "https://www.instagram.com/topcasabr/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 77,
+      "nome": "TopClass",
+      "site_instagram": "https://www.topclass.com.br/",
+      "telefone": "(11) 4825-3931",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 78,
+      "nome": "TT Brasil",
+      "site_instagram": "https://ttbrasil.com.br/",
+      "telefone": "(11) 98845-2637",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 79,
+      "nome": "Uatt",
+      "site_instagram": "https://uatt.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 80,
+      "nome": "Unik Home",
+      "site_instagram": "https://www.instagram.com/unikhomeimportador/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 81,
+      "nome": "Unimix",
+      "site_instagram": "https://unimix.com.br/",
+      "telefone": "(86) 3251-6659",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 82,
+      "nome": "Vércia",
+      "site_instagram": "https://www.vercia.ind.br/",
+      "telefone": "(11) 2092-9688",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 83,
+      "nome": "VMV",
+      "site_instagram": "https://www.vmv.com.br/",
+      "telefone": "(11) 2935-6788",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 84,
+      "nome": "Wellmix",
+      "site_instagram": "https://www.wellmix.com.br/",
+      "telefone": "(11) 2512-2705",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 85,
+      "nome": "WillA",
+      "site_instagram": "https://www.willa.com.br/",
+      "telefone": "(21) 2221-1187",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 86,
+      "nome": "Wire Store",
+      "site_instagram": "https://www.instagram.com/wirestore.br/",
+      "telefone": "(16) 99308-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 87,
+      "nome": "zerotoys",
+      "site_instagram": "https://zerotoys.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 88,
+      "nome": "Baraze",
+      "site_instagram": "https://www.baraze.com.br/",
+      "telefone": "(11) 2915-6000",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 89,
+      "nome": "Casa Do Caos",
+      "site_instagram": "https://www.instagram.com/casadocaosoficial/",
+      "telefone": "(11) 3812-3400",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 90,
+      "nome": "CHR",
+      "site_instagram": "https://www.instagram.com/chrbrasil/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 91,
+      "nome": "Caneca",
+      "site_instagram": "https://www.caneca.com.br/",
+      "telefone": "(47) 3286-7045",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 92,
+      "nome": "Caneca Home",
+      "site_instagram": "https://www.instagram.com/canecahome/",
+      "telefone": "(11) 3862-7045",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 93,
+      "nome": "Euro Home",
+      "site_instagram": "https://www.instagram.com/eurohomeoficial/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 94,
+      "nome": "Pasta Criare",
+      "site_instagram": "https://pastacriare.com.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 95,
+      "nome": "Pratas Douradas Atacadista",
+      "site_instagram": "https://www.instagram.com/pratasdouradasatacadista/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 96,
+      "nome": "Linapse",
+      "site_instagram": "https://linapse.com.br/",
+      "telefone": "(46) 3647-2165",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 97,
+      "nome": "LA Plasticos",
+      "site_instagram": "https://laplasticos.com/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 98,
+      "nome": "Casa e Vida",
+      "site_instagram": "https://www.instagram.com/casaevida.br/",
+      "telefone": "(11) 99935-7345",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 99,
+      "nome": "C. Vida Importadora",
+      "site_instagram": "https://www.instagram.com/cvidaimportadora/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 100,
+      "nome": "Metalocasa",
+      "site_instagram": "https://metalocasa.com.br/",
+      "telefone": "(16) 99308-0073",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 101,
+      "nome": "Global Gifts",
+      "site_instagram": "https://www.globalgifts.com.br/",
+      "telefone": "(11) 4762-7200",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 102,
+      "nome": "Malssi Platinium",
+      "site_instagram": "https://www.malssiplatinium.com.br/",
+      "telefone": "(16) 3512-2006",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 103,
+      "nome": "Quality House",
+      "site_instagram": "https://www.instagram.com/qualityhouse.br/",
+      "telefone": "",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 104,
+      "nome": "Zatti Mix",
+      "site_instagram": "https://www.instagram.com/zattimix/",
+      "telefone": "(11) 95635-3007",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    },
+    {
+      "id": 105,
+      "nome": "Ecocor Comercial",
+      "site_instagram": "https://www.ecocor.eco.br/",
+      "telefone": "(11) 3225-6457",
+      "observacoes": "",
+      "prioritario": false,
+      "ativo": true,
+      "created_at": "2026-09-17T11:13:24.738045"
+    }
+  ],
+  "proximo_id": 106
+}

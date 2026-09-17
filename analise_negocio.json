@@ -1,0 +1,83 @@
+{
+  "premissas": {
+    "TACOS": 0.05,
+    "Custo de Prep.": 1.3,
+    "Alíquota de Imposto": 0.04,
+    "Frete FBA": 6.0
+  },
+  "estrutura_tabela": [
+    {
+      "coluna": "B",
+      "nome": "Produto",
+      "indice": 2
+    },
+    {
+      "coluna": "C",
+      "nome": "Fornecedor",
+      "indice": 3
+    },
+    {
+      "coluna": "D",
+      "nome": "Custo Unitário",
+      "indice": 4
+    },
+    {
+      "coluna": "E",
+      "nome": "Preço de venda",
+      "indice": 5
+    },
+    {
+      "coluna": "F",
+      "nome": "Comissão",
+      "indice": 6
+    },
+    {
+      "coluna": "G",
+      "nome": "Prep",
+      "indice": 7
+    },
+    {
+      "coluna": "H",
+      "nome": "Frete",
+      "indice": 8
+    },
+    {
+      "coluna": "I",
+      "nome": "Impostos",
+      "indice": 9
+    },
+    {
+      "coluna": "J",
+      "nome": "Margem de Lucro",
+      "indice": 10
+    },
+    {
+      "coluna": "K",
+      "nome": "Ads",
+      "indice": 11
+    },
+    {
+      "coluna": "L",
+      "nome": "Margem pós ads",
+      "indice": 12
+    }
+  ],
+  "produtos": [
+    {
+      "linha": 10,
+      "produto": "Tábua Inox",
+      "Produto": "Tábua Inox",
+      "Fornecedor": "Utimix",
+      "Custo Unitário": 12.5,
+      "Preço de venda": 33.9,
+      "Comissão": 0,
+      "Prep": 1.3,
+      "Frete": 6,
+      "Impostos": 1.3559999999999999,
+      "Margem de Lucro": 0.37592920353982295,
+      "Ads": 1.695,
+      "Margem pós ads": 0.32592920353982296
+    }
+  ],
+  "total_produtos": 1
+}

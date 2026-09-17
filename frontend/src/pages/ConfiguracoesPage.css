@@ -1,0 +1,268 @@
+.configuracoes-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.config-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Info Box */
+.info-box {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+}
+
+.info-icon {
+  font-size: 28px;
+}
+
+.info-content {
+  flex: 1;
+  font-size: 14px;
+  color: #1976d2;
+  line-height: 1.6;
+}
+
+.info-content strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+/* Config Section */
+.config-section {
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.config-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.config-header h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.config-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Config Field */
+.config-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.config-field label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.input-group:focus-within {
+  border-color: #667eea;
+}
+
+.input-prefix,
+.input-suffix {
+  padding: 0 16px;
+  background: #f0f0f0;
+  color: #666;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.config-field input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.config-field small {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Preview Section */
+.preview-section {
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+}
+
+.preview-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.preview-section > p {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.preview-calc {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.calc-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.calc-item:last-child {
+  border-bottom: none;
+}
+
+.calc-item.total {
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.calc-item.result {
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
+
+.calc-item .positive {
+  color: #4caf50;
+}
+
+.calc-item .negative {
+  color: #f44336;
+}
+
+.calc-item .warning {
+  color: #ff9800;
+}
+
+/* Message */
+.message {
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+}
+
+.message.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #f44336;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .config-container {
+    padding: 24px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .calc-item {
+    font-size: 13px;
+  }
+
+  .config-section {
+    padding: 20px;
+  }
+}

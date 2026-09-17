@@ -1,0 +1,265 @@
+.novo-produto h2 {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.calculo-previo {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px 0;
+  border: 2px solid #e9ecef;
+}
+
+.calculo-previo h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.calculo-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calculo-header-row h3 {
+  margin: 0;
+}
+
+.btn-toggle-edit {
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-toggle-edit:hover {
+  background: #5568d3;
+  transform: translateY(-1px);
+}
+
+.calculo-header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-ok {
+  color: #4caf50;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-erro {
+  color: #f44336;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.calculo-detalhes {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.calculo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  align-items: center;
+}
+
+.calculo-item.editable {
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-bottom: none;
+}
+
+.calculo-item .item-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.calculo-item .item-label span:first-child {
+  min-width: 120px;
+}
+
+.calculo-item .item-label small {
+  color: #666;
+  font-size: 11px;
+}
+
+.edit-input {
+  padding: 6px 10px;
+  border: 2px solid #667eea;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  width: 80px;
+  text-align: center;
+}
+
+.edit-input.small {
+  width: 70px;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #5568d3;
+  background: #f0f4ff;
+}
+
+.edit-info {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1565c0;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.calculo-item:last-child {
+  border-bottom: none;
+}
+
+.calculo-item.total {
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.calculo-resultados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.resultado-final {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.resultado-titulo {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.resultado-valor {
+  font-size: 24px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .calculo-resultados {
+    grid-template-columns: 1fr;
+  }
+}
