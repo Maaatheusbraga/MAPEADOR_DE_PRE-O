@@ -222,6 +222,21 @@
   color: var(--cor-petroleo);
 }
 
+.resultado-sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+.resultado-final.destaque-ads {
+  border: 2px solid var(--cor-laranja);
+}
+
+.resultado-final.destaque-ads .resultado-valor {
+  color: var(--cor-laranja);
+}
+
 .error-message {
   background: #ffebee;
   color: #c62828;

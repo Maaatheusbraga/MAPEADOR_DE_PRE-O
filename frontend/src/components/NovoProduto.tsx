@@ -8,16 +8,33 @@ interface Fornecedor {
   prioritario?: boolean;
 }
 
+interface ProdutoEdicao {
+  id: number;
+  nome: string;
+  custo_unitario: number;
+  preco_venda: number;
+  fornecedor_id?: number;
+  fornecedor?: { id: number; nome: string };
+}
+
 interface Props {
   fornecedores: Fornecedor[];
   onSucesso: () => void;
+  produto?: ProdutoEdicao | null;
 }
 
-export function NovoProduto({ fornecedores, onSucesso }: Props) {
-  const [nome, setNome] = useState('');
-  const [fornecedorId, setFornecedorId] = useState('');
-  const [custoUnitario, setCustoUnitario] = useState('');
-  const [precoVenda, setPrecoVenda] = useState('');
+export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) {
+  const editando = Boolean(produto);
+  const [nome, setNome] = useState(produto?.nome || '');
+  const [fornecedorId, setFornecedorId] = useState(
+    produto ? String(produto.fornecedor_id || produto.fornecedor?.id || '') : ''
+  );
+  const [custoUnitario, setCustoUnitario] = useState(
+    produto ? String(produto.custo_unitario) : ''
+  );
+  const [precoVenda, setPrecoVenda] = useState(
+    produto ? String(produto.preco_venda) : ''
+  );
   const [calculoPrevio, setCalculoPrevio] = useState<any>(null);
   const [configuracoes, setConfiguracoes] = useState<any>(null);
   const [erro, setErro] = useState('');
@@ -44,39 +61,47 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
     }
   };
 
-  // Calcula em tempo real quando o usuário digita
+  const numeroOuPadrao = (valor: number | null, padrao: number) => {
+    return valor !== null && Number.isFinite(valor) ? valor : padrao;
+  };
+
+  const lerNumero = (valor: string): number | null => {
+    if (valor.trim() === '') return null;
+    const n = Number(valor);
+    return Number.isFinite(n) ? n : null;
+  };
+
   useEffect(() => {
-    if (custoUnitario && precoVenda && configuracoes) {
-      const custo = parseFloat(custoUnitario);
-      const preco = parseFloat(precoVenda);
-
-      if (custo > 0 && preco > 0 && preco > custo) {
-        calcularPrevio(custo, preco);
-      } else {
-        setCalculoPrevio(null);
-      }
-    } else {
+    if (!custoUnitario || !precoVenda || !configuracoes) {
       setCalculoPrevio(null);
+      return;
     }
-  }, [custoUnitario, precoVenda, configuracoes]);
 
-  const calcularPrevio = (custo: number, preco: number) => {
-    // Usar valores customizados ou padrão das configurações
+    const custo = parseFloat(custoUnitario);
+    const preco = parseFloat(precoVenda);
+
+    if (!(custo > 0 && preco > 0 && preco > custo)) {
+      setCalculoPrevio(null);
+      return;
+    }
+
     const config = {
-      tacos: tacos !== null ? tacos : configuracoes.tacos,
-      taxa_comissao: taxaComissao !== null ? taxaComissao : configuracoes.taxa_comissao,
-      custo_prep: custoPrep !== null ? custoPrep : configuracoes.custo_prep,
-      frete_fba: freteFba !== null ? freteFba : configuracoes.frete_fba,
-      aliquota_imposto: aliquotaImposto !== null ? aliquotaImposto : configuracoes.aliquota_imposto,
+      tacos: numeroOuPadrao(tacos, configuracoes.tacos),
+      taxa_comissao: numeroOuPadrao(taxaComissao, configuracoes.taxa_comissao),
+      custo_prep: numeroOuPadrao(custoPrep, configuracoes.custo_prep),
+      frete_fba: numeroOuPadrao(freteFba, configuracoes.frete_fba),
+      aliquota_imposto: numeroOuPadrao(aliquotaImposto, configuracoes.aliquota_imposto),
     };
-    
+
     const comissao = preco * config.taxa_comissao;
     const prep = config.custo_prep;
     const frete = config.frete_fba;
     const impostos = preco * config.aliquota_imposto;
     const ads = preco * config.tacos;
-
-    const custoTotal = custo + comissao + prep + frete + impostos + ads;
+    const custoSemAds = custo + comissao + prep + frete + impostos;
+    const custoTotal = custoSemAds + ads;
+    const lucroSemAds = preco - custoSemAds;
+    const margemSemAds = lucroSemAds / preco;
     const lucro = preco - custoTotal;
     const margem = lucro / preco;
 
@@ -93,13 +118,15 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
       impostos,
       ads,
       custoTotal,
+      lucroSemAds,
+      margemSemAds,
       lucro,
       margem,
       classificacao,
       lucrativo: lucro > 0,
-      config, // Guardar config usada
+      config,
     });
-  };
+  }, [custoUnitario, precoVenda, configuracoes, tacos, taxaComissao, custoPrep, freteFba, aliquotaImposto]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -136,16 +163,22 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
     setCarregando(true);
 
     try {
-      await produtosAPI.criar({
+      const dados = {
         nome: nome.trim(),
         fornecedor_id: parseInt(fornecedorId),
         custo_unitario: custo,
         preco_venda: preco,
-      });
+      };
+
+      if (editando && produto) {
+        await produtosAPI.atualizar(produto.id, dados);
+      } else {
+        await produtosAPI.criar(dados);
+      }
 
       onSucesso();
     } catch (error: any) {
-      setErro(error.response?.data?.detail || 'Erro ao criar produto');
+      setErro(error.response?.data?.detail || (editando ? 'Erro ao atualizar produto' : 'Erro ao criar produto'));
     } finally {
       setCarregando(false);
     }
@@ -174,7 +207,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
 
   return (
     <div className="novo-produto">
-      <h2>➕ Novo Produto</h2>
+      <h2>{editando ? '✏️ Editar Produto' : '➕ Novo Produto'}</h2>
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -275,12 +308,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
                       min="0"
                       max="1"
                       value={taxaComissao !== null ? taxaComissao : configuracoes.taxa_comissao}
-                      onChange={(e) => {
-                        setTaxaComissao(parseFloat(e.target.value));
-                        if (custoUnitario && precoVenda) {
-                          setTimeout(() => calcularPrevio(parseFloat(custoUnitario), parseFloat(precoVenda)), 100);
-                        }
-                      }}
+                      onChange={(e) => setTaxaComissao(lerNumero(e.target.value))}
                       className="edit-input small"
                       placeholder="%"
                     />
@@ -300,12 +328,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
                       step="0.01"
                       min="0"
                       value={custoPrep !== null ? custoPrep : configuracoes.custo_prep}
-                      onChange={(e) => {
-                        setCustoPrep(parseFloat(e.target.value));
-                        if (custoUnitario && precoVenda) {
-                          setTimeout(() => calcularPrevio(parseFloat(custoUnitario), parseFloat(precoVenda)), 100);
-                        }
-                      }}
+                      onChange={(e) => setCustoPrep(lerNumero(e.target.value))}
                       className="edit-input small"
                       placeholder="R$"
                     />
@@ -324,12 +347,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
                       step="0.01"
                       min="0"
                       value={freteFba !== null ? freteFba : configuracoes.frete_fba}
-                      onChange={(e) => {
-                        setFreteFba(parseFloat(e.target.value));
-                        if (custoUnitario && precoVenda) {
-                          setTimeout(() => calcularPrevio(parseFloat(custoUnitario), parseFloat(precoVenda)), 100);
-                        }
-                      }}
+                      onChange={(e) => setFreteFba(lerNumero(e.target.value))}
                       className="edit-input small"
                       placeholder="R$"
                     />
@@ -349,12 +367,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
                       min="0"
                       max="1"
                       value={aliquotaImposto !== null ? aliquotaImposto : configuracoes.aliquota_imposto}
-                      onChange={(e) => {
-                        setAliquotaImposto(parseFloat(e.target.value));
-                        if (custoUnitario && precoVenda) {
-                          setTimeout(() => calcularPrevio(parseFloat(custoUnitario), parseFloat(precoVenda)), 100);
-                        }
-                      }}
+                      onChange={(e) => setAliquotaImposto(lerNumero(e.target.value))}
                       className="edit-input small"
                       placeholder="%"
                     />
@@ -375,12 +388,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
                       min="0"
                       max="1"
                       value={tacos !== null ? tacos : configuracoes.tacos}
-                      onChange={(e) => {
-                        setTacos(parseFloat(e.target.value));
-                        if (custoUnitario && precoVenda) {
-                          setTimeout(() => calcularPrevio(parseFloat(custoUnitario), parseFloat(precoVenda)), 100);
-                        }
-                      }}
+                      onChange={(e) => setTacos(lerNumero(e.target.value))}
                       className="edit-input small"
                       placeholder="%"
                     />
@@ -405,12 +413,14 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
 
             <div className="calculo-resultados">
               <div className="resultado-final">
-                <div className="resultado-titulo">Margem (com ADS)</div>
-                <div className="resultado-valor">{formatarPercentual(calculoPrevio.margem)}</div>
+                <div className="resultado-titulo">Margem de Lucro</div>
+                <div className="resultado-valor">{formatarPercentual(calculoPrevio.margemSemAds)}</div>
+                <div className="resultado-sub">{formatarMoeda(calculoPrevio.lucroSemAds)}</div>
               </div>
-              <div className="resultado-final">
-                <div className="resultado-titulo">Lucro (com ADS)</div>
-                <div className="resultado-valor">{formatarMoeda(calculoPrevio.lucro)}</div>
+              <div className="resultado-final destaque-ads">
+                <div className="resultado-titulo">Margem pós ADS</div>
+                <div className="resultado-valor">{formatarPercentual(calculoPrevio.margem)}</div>
+                <div className="resultado-sub">{formatarMoeda(calculoPrevio.lucro)}</div>
               </div>
             </div>
           </div>
@@ -419,7 +429,7 @@ export function NovoProduto({ fornecedores, onSucesso }: Props) {
         {erro && <div className="error-message">{erro}</div>}
 
         <button type="submit" className="btn-primary" disabled={carregando}>
-          {carregando ? 'Salvando...' : '💾 Salvar Produto'}
+          {carregando ? 'Salvando...' : editando ? '💾 Salvar Alterações' : '💾 Salvar Produto'}
         </button>
       </form>
     </div>

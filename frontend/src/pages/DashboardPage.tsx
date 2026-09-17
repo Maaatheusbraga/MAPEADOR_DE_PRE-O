@@ -83,7 +83,7 @@ export function DashboardPage() {
           <div className="metric-icon">📊</div>
           <div className="metric-content">
             <div className="metric-value">{formatarPercentual(dashboard.estatisticas.margem_media)}</div>
-            <div className="metric-label">Margem Média</div>
+            <div className="metric-label">Margem Média pós ADS</div>
           </div>
         </div>
 
@@ -149,7 +149,7 @@ export function DashboardPage() {
                     {formatarMoeda(produto.calculado.lucro_com_ads)}
                   </div>
                   <div className="product-margin">
-                    {formatarPercentual(produto.calculado.margem_com_ads)}
+                    {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)} → {formatarPercentual(produto.calculado.margem_com_ads)} pós ADS
                   </div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ export function DashboardPage() {
                     {formatarMoeda(produto.calculado.lucro_com_ads)}
                   </div>
                   <div className="product-margin">
-                    {formatarPercentual(produto.calculado.margem_com_ads)}
+                    {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)} → {formatarPercentual(produto.calculado.margem_com_ads)} pós ADS
                   </div>
                 </div>
               </div>

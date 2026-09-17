@@ -221,7 +221,10 @@ export function ConfiguracoesPage() {
                 const comissao = preco * premissas.taxa_comissao;
                 const ads = preco * premissas.tacos;
                 const impostos = preco * premissas.aliquota_imposto;
-                const custoTotal = custo + comissao + premissas.custo_prep + premissas.frete_fba + impostos + ads;
+                const custoSemAds = custo + comissao + premissas.custo_prep + premissas.frete_fba + impostos;
+                const custoTotal = custoSemAds + ads;
+                const lucroSemAds = preco - custoSemAds;
+                const margemSemAds = (lucroSemAds / preco) * 100;
                 const lucro = preco - custoTotal;
                 const margem = (lucro / preco) * 100;
 
@@ -252,15 +255,27 @@ export function ConfiguracoesPage() {
                       <span>R$ {custoTotal.toFixed(2)}</span>
                     </div>
                     <div className="calc-item result">
-                      <span>Lucro:</span>
-                      <span className={lucro > 0 ? 'positive' : 'negative'}>
-                        R$ {lucro.toFixed(2)}
+                      <span>Margem de Lucro:</span>
+                      <span className={margemSemAds >= 15 ? 'positive' : 'warning'}>
+                        {margemSemAds.toFixed(1)}%
                       </span>
                     </div>
                     <div className="calc-item result">
-                      <span>Margem:</span>
+                      <span>Lucro:</span>
+                      <span className={lucroSemAds > 0 ? 'positive' : 'negative'}>
+                        R$ {lucroSemAds.toFixed(2)}
+                      </span>
+                    </div>
+                    <div className="calc-item result">
+                      <span>Margem pós ADS:</span>
                       <span className={margem >= 15 ? 'positive' : 'warning'}>
-                        {margem.toFixed(2)}%
+                        {margem.toFixed(1)}%
+                      </span>
+                    </div>
+                    <div className="calc-item result">
+                      <span>Lucro pós ADS:</span>
+                      <span className={lucro > 0 ? 'positive' : 'negative'}>
+                        R$ {lucro.toFixed(2)}
                       </span>
                     </div>
                   </>

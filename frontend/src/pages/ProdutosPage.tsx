@@ -8,10 +8,13 @@ interface Produto {
   nome: string;
   custo_unitario: number;
   preco_venda: number;
+  fornecedor_id?: number;
   fornecedor?: { id: number; nome: string };
   calculado: {
     margem_com_ads: number;
     lucro_com_ads: number;
+    margem_sem_ads?: number;
+    lucro_sem_ads?: number;
     lucrativo: boolean;
     classificacao: string;
   };
@@ -37,6 +40,7 @@ export function ProdutosPage() {
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>([]);
   const [dashboard, setDashboard] = useState<Dashboard | null>(null);
   const [mostrarForm, setMostrarForm] = useState(false);
+  const [produtoEdicao, setProdutoEdicao] = useState<Produto | null>(null);
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
@@ -62,9 +66,19 @@ export function ProdutosPage() {
     }
   };
 
-  const handleNovoProduto = async () => {
+  const fecharForm = () => {
     setMostrarForm(false);
+    setProdutoEdicao(null);
+  };
+
+  const handleSalvo = async () => {
+    fecharForm();
     await carregarDados();
+  };
+
+  const handleEditar = (produto: Produto) => {
+    setProdutoEdicao(produto);
+    setMostrarForm(true);
   };
 
   const handleExcluir = async (id: number) => {
@@ -139,7 +153,7 @@ export function ProdutosPage() {
             <div className="card-icon">📊</div>
             <div className="card-content">
               <div className="card-value">{formatarPercentual(dashboard.estatisticas.margem_media)}</div>
-              <div className="card-label">Margem Média</div>
+              <div className="card-label">Margem Média pós ADS</div>
             </div>
           </div>
 
@@ -155,19 +169,21 @@ export function ProdutosPage() {
 
       {/* Botão Novo Produto */}
       <div className="actions">
-        <button onClick={() => setMostrarForm(true)} className="btn-novo">
+        <button onClick={() => { setProdutoEdicao(null); setMostrarForm(true); }} className="btn-novo">
           ➕ Novo Produto
         </button>
       </div>
 
       {/* Modal Novo Produto */}
       {mostrarForm && (
-        <div className="modal-overlay" onClick={() => setMostrarForm(false)}>
+        <div className="modal-overlay" onClick={fecharForm}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setMostrarForm(false)}>✕</button>
+            <button className="modal-close" onClick={fecharForm}>✕</button>
             <NovoProduto 
+              key={produtoEdicao ? `edit-${produtoEdicao.id}` : 'novo'}
               fornecedores={fornecedores}
-              onSucesso={handleNovoProduto}
+              produto={produtoEdicao}
+              onSucesso={handleSalvo}
             />
           </div>
         </div>
@@ -212,14 +228,28 @@ export function ProdutosPage() {
 
               <div className="produto-resultados">
                 <div className="resultado-item">
-                  <div className="resultado-label">Margem (com ADS)</div>
+                  <div className="resultado-label">Margem de Lucro</div>
+                  <div className="resultado-valor">
+                    {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)}
+                  </div>
+                </div>
+
+                <div className="resultado-item">
+                  <div className="resultado-label">Lucro</div>
+                  <div className="resultado-valor">
+                    {formatarMoeda(produto.calculado.lucro_sem_ads ?? produto.calculado.lucro_com_ads)}
+                  </div>
+                </div>
+
+                <div className="resultado-item">
+                  <div className="resultado-label">Margem pós ADS</div>
                   <div className="resultado-valor destaque">
                     {formatarPercentual(produto.calculado.margem_com_ads)}
                   </div>
                 </div>
 
                 <div className="resultado-item">
-                  <div className="resultado-label">Lucro (com ADS)</div>
+                  <div className="resultado-label">Lucro pós ADS</div>
                   <div className="resultado-valor destaque">
                     {formatarMoeda(produto.calculado.lucro_com_ads)}
                   </div>
@@ -234,6 +264,12 @@ export function ProdutosPage() {
               </div>
 
               <div className="produto-actions">
+                <button 
+                  onClick={() => handleEditar(produto)}
+                  className="btn-editar"
+                >
+                  ✏️ Editar
+                </button>
                 <button 
                   onClick={() => handleExcluir(produto.id)}
                   className="btn-excluir"
