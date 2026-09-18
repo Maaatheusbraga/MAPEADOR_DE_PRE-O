@@ -23,10 +23,14 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    const url = String(error.config?.url || '');
+    const isAuthAttempt = url.includes('/api/auth/login') || url.includes('/api/auth/cadastro');
+    if (error.response?.status === 401 && !isAuthAttempt) {
       localStorage.removeItem('token');
       localStorage.removeItem('usuario');
-      window.location.href = '/login';
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }
@@ -68,6 +72,7 @@ export const produtosAPI = {
     fornecedor_id: number;
     custo_unitario: number;
     preco_venda: number;
+    observacao?: string;
   }) => {
     const response = await api.post('/api/produtos', dados);
     return response.data;
@@ -154,6 +159,34 @@ export const configuracoesAPI = {
 export const dashboardAPI = {
   obter: async () => {
     const response = await api.get('/api/dashboard');
+    return response.data;
+  },
+};
+
+export const dreAPI = {
+  obter: async () => {
+    const response = await api.get('/api/dre');
+    return response.data;
+  },
+  salvar: async (meses: any[]) => {
+    const response = await api.put('/api/dre', { meses });
+    return response.data;
+  },
+};
+
+export const fluxoCaixaAPI = {
+  obter: async () => {
+    const response = await api.get('/api/fluxo-caixa');
+    return response.data;
+  },
+  salvar: async (payload: {
+    saldo_atual: { caixa: number; banco: number; total: number };
+    movimentacoes: any[];
+    passivos: any[];
+    proximo_id_movimentacao: number;
+    proximo_id_passivo: number;
+  }) => {
+    const response = await api.put('/api/fluxo-caixa', payload);
     return response.data;
   },
 };

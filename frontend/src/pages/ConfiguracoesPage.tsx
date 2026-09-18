@@ -72,7 +72,7 @@ export function ConfiguracoesPage() {
   return (
     <div className="configuracoes-page">
       <div className="page-header">
-        <h2>⚙️ Configurações</h2>
+        <h2>Configurações</h2>
         <p>Ajuste os valores padrão usados nos cálculos de lucratividade</p>
       </div>
 

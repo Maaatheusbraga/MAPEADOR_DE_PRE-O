@@ -33,31 +33,39 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  border-left: 4px solid var(--cor-petroleo);
+  box-shadow: none;
+  border: 1px solid #d7e4e6;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: left;
+  font: inherit;
+  color: inherit;
 }
 
-.metric-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+button.metric-card {
+  cursor: pointer;
+  width: 100%;
+}
+
+button.metric-card:hover {
+  background: var(--cor-petroleo-suave);
+  border-color: var(--cor-petroleo);
 }
 
 .metric-card.success {
-  border-left-color: #4caf50;
+  background: #f3faf4;
 }
 
 .metric-card.info {
-  border-left-color: var(--cor-petroleo);
+  background: var(--cor-petroleo-suave);
 }
 
 .metric-card.money {
-  border-left-color: var(--cor-laranja);
+  background: var(--cor-laranja-suave);
 }
 
 .metric-icon {
-  font-size: 48px;
+  display: flex;
+  color: var(--cor-petroleo);
 }
 
 .metric-value {
@@ -70,7 +78,21 @@
 
 .metric-label {
   font-size: 14px;
-  color: #666;
+  color: #3a4f52;
+}
+
+.page-header.mineracao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.page-header .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
 }
 
 /* Quick Actions */
@@ -146,7 +168,8 @@
 }
 
 .dashboard-section.alert {
-  border-left: 4px solid var(--cor-laranja);
+  border: 1px solid #e8c4c4;
+  background: #fdf6f6;
 }
 
 .dashboard-section h3 {

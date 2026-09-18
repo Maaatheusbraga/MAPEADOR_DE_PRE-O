@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { fluxoCaixaAPI } from '../services/api';
 import './FluxoCaixaPage.css';
 
 interface Movimentacao {
@@ -40,18 +41,49 @@ export function FluxoCaixaPage() {
   const [vencimento, setVencimento] = useState('');
 
   const [erro, setErro] = useState('');
+  const [proximoIdMov, setProximoIdMov] = useState(1);
+  const [proximoIdPass, setProximoIdPass] = useState(1);
 
   useEffect(() => {
     carregarDados();
   }, []);
 
-  const carregarDados = () => {
-    // Inicia vazio - usuário adiciona seus próprios dados
-    setMovimentacoes([]);
-    setPassivos([]);
+  const persistir = async (payload: {
+    saldoCaixa: number;
+    saldoBanco: number;
+    movimentacoes: Movimentacao[];
+    passivos: Passivo[];
+    proximoIdMov: number;
+    proximoIdPass: number;
+  }) => {
+    await fluxoCaixaAPI.salvar({
+      saldo_atual: {
+        caixa: payload.saldoCaixa,
+        banco: payload.saldoBanco,
+        total: payload.saldoCaixa + payload.saldoBanco,
+      },
+      movimentacoes: payload.movimentacoes,
+      passivos: payload.passivos,
+      proximo_id_movimentacao: payload.proximoIdMov,
+      proximo_id_passivo: payload.proximoIdPass,
+    });
   };
 
-  const handleSubmitMov = (e: React.FormEvent) => {
+  const carregarDados = async () => {
+    try {
+      const data = await fluxoCaixaAPI.obter();
+      setSaldoCaixa(data.saldo_atual?.caixa || 0);
+      setSaldoBanco(data.saldo_atual?.banco || 0);
+      setMovimentacoes(data.movimentacoes || []);
+      setPassivos(data.passivos || []);
+      setProximoIdMov(data.proximo_id_movimentacao || 1);
+      setProximoIdPass(data.proximo_id_passivo || 1);
+    } catch (error) {
+      console.error('Erro ao carregar fluxo de caixa:', error);
+    }
+  };
+
+  const handleSubmitMov = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
 
@@ -62,7 +94,7 @@ export function FluxoCaixaPage() {
     }
 
     const novaMov: Movimentacao = {
-      id: movimentacoes.length + 1,
+      id: proximoIdMov,
       data,
       tipo,
       categoria,
@@ -70,20 +102,30 @@ export function FluxoCaixaPage() {
       valor: valorNum,
     };
 
-    setMovimentacoes([novaMov, ...movimentacoes]);
-    
-    // Atualizar saldo
-    if (tipo === 'entrada') {
-      setSaldoCaixa(saldoCaixa + valorNum);
-    } else {
-      setSaldoCaixa(saldoCaixa - valorNum);
-    }
+    const novasMovs = [novaMov, ...movimentacoes];
+    const novoCaixa = tipo === 'entrada' ? saldoCaixa + valorNum : saldoCaixa - valorNum;
+    const novoId = proximoIdMov + 1;
 
-    limparFormMov();
-    setMostrarFormMov(false);
+    try {
+      await persistir({
+        saldoCaixa: novoCaixa,
+        saldoBanco,
+        movimentacoes: novasMovs,
+        passivos,
+        proximoIdMov: novoId,
+        proximoIdPass,
+      });
+      setMovimentacoes(novasMovs);
+      setSaldoCaixa(novoCaixa);
+      setProximoIdMov(novoId);
+      limparFormMov();
+      setMostrarFormMov(false);
+    } catch (error) {
+      setErro('Não foi possível salvar a movimentação');
+    }
   };
 
-  const handleSubmitPass = (e: React.FormEvent) => {
+  const handleSubmitPass = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
 
@@ -94,42 +136,90 @@ export function FluxoCaixaPage() {
     }
 
     const novoPass: Passivo = {
-      id: passivos.length + 1,
+      id: proximoIdPass,
       descricao: descricaoPass,
       valor: valorNum,
       vencimento,
       pago: false,
     };
 
-    setPassivos([...passivos, novoPass]);
-    limparFormPass();
-    setMostrarFormPass(false);
-  };
+    const novosPassivos = [...passivos, novoPass];
+    const novoId = proximoIdPass + 1;
 
-  const marcarComoPago = (id: number) => {
-    setPassivos(passivos.map(p => 
-      p.id === id ? { ...p, pago: true } : p
-    ));
-  };
-
-  const excluirMovimentacao = (id: number) => {
-    if (window.confirm('Excluir esta movimentação?')) {
-      const mov = movimentacoes.find(m => m.id === id);
-      if (mov) {
-        // Reverter saldo
-        if (mov.tipo === 'entrada') {
-          setSaldoCaixa(saldoCaixa - mov.valor);
-        } else {
-          setSaldoCaixa(saldoCaixa + mov.valor);
-        }
-        setMovimentacoes(movimentacoes.filter(m => m.id !== id));
-      }
+    try {
+      await persistir({
+        saldoCaixa,
+        saldoBanco,
+        movimentacoes,
+        passivos: novosPassivos,
+        proximoIdMov,
+        proximoIdPass: novoId,
+      });
+      setPassivos(novosPassivos);
+      setProximoIdPass(novoId);
+      limparFormPass();
+      setMostrarFormPass(false);
+    } catch (error) {
+      setErro('Não foi possível salvar o passivo');
     }
   };
 
-  const excluirPassivo = (id: number) => {
-    if (window.confirm('Excluir este passivo?')) {
-      setPassivos(passivos.filter(p => p.id !== id));
+  const marcarComoPago = async (id: number) => {
+    const novosPassivos = passivos.map(p =>
+      p.id === id ? { ...p, pago: true } : p
+    );
+    try {
+      await persistir({
+        saldoCaixa,
+        saldoBanco,
+        movimentacoes,
+        passivos: novosPassivos,
+        proximoIdMov,
+        proximoIdPass,
+      });
+      setPassivos(novosPassivos);
+    } catch (error) {
+      setErro('Não foi possível atualizar o passivo');
+    }
+  };
+
+  const excluirMovimentacao = async (id: number) => {
+    if (!window.confirm('Excluir esta movimentação?')) return;
+    const mov = movimentacoes.find(m => m.id === id);
+    if (!mov) return;
+    const novoCaixa = mov.tipo === 'entrada' ? saldoCaixa - mov.valor : saldoCaixa + mov.valor;
+    const novasMovs = movimentacoes.filter(m => m.id !== id);
+    try {
+      await persistir({
+        saldoCaixa: novoCaixa,
+        saldoBanco,
+        movimentacoes: novasMovs,
+        passivos,
+        proximoIdMov,
+        proximoIdPass,
+      });
+      setSaldoCaixa(novoCaixa);
+      setMovimentacoes(novasMovs);
+    } catch (error) {
+      setErro('Não foi possível excluir a movimentação');
+    }
+  };
+
+  const excluirPassivo = async (id: number) => {
+    if (!window.confirm('Excluir este passivo?')) return;
+    const novosPassivos = passivos.filter(p => p.id !== id);
+    try {
+      await persistir({
+        saldoCaixa,
+        saldoBanco,
+        movimentacoes,
+        passivos: novosPassivos,
+        proximoIdMov,
+        proximoIdPass,
+      });
+      setPassivos(novosPassivos);
+    } catch (error) {
+      setErro('Não foi possível excluir o passivo');
     }
   };
 
@@ -172,15 +262,15 @@ export function FluxoCaixaPage() {
     <div className="fluxo-caixa-page">
       <div className="page-header">
         <div>
-          <h2>💰 Fluxo de Caixa</h2>
+          <h2>Fluxo de Caixa</h2>
           <p>Controle de entradas, saídas e saldo</p>
         </div>
         <div className="header-actions">
           <button onClick={() => setMostrarFormMov(true)} className="btn-novo">
-            ➕ Nova Movimentação
+            Nova movimentação
           </button>
           <button onClick={() => setMostrarFormPass(true)} className="btn-secondary-action">
-            📋 Novo Passivo
+            Novo passivo
           </button>
         </div>
       </div>

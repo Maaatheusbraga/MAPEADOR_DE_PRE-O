@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { dreAPI } from '../services/api';
 import './DREPage.css';
 
 interface DREMes {
@@ -25,12 +26,16 @@ export function DREPage() {
     carregarDRE();
   }, []);
 
-  const carregarDRE = () => {
-    // Inicia vazio - usuário adiciona seus próprios períodos
-    setMeses([]);
+  const carregarDRE = async () => {
+    try {
+      const data = await dreAPI.obter();
+      setMeses(data.meses || []);
+    } catch (error) {
+      console.error('Erro ao carregar DRE:', error);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
 
@@ -55,9 +60,15 @@ export function DREPage() {
       lucro_liquido: lucroLiquido,
     };
 
-    setMeses([...meses, novoDRE]);
-    limparForm();
-    setMostrarForm(false);
+    const novosMeses = [...meses, novoDRE];
+    try {
+      await dreAPI.salvar(novosMeses);
+      setMeses(novosMeses);
+      limparForm();
+      setMostrarForm(false);
+    } catch (error) {
+      setErro('Não foi possível salvar o período');
+    }
   };
 
   const limparForm = () => {
@@ -96,11 +107,11 @@ export function DREPage() {
     <div className="dre-page">
       <div className="page-header">
         <div>
-          <h2>📊 DRE - Demonstração de Resultados</h2>
+          <h2>DRE — Demonstração de Resultados</h2>
           <p>Análise de receitas, custos e lucros por período</p>
         </div>
         <button onClick={() => setMostrarForm(true)} className="btn-novo">
-          ➕ Adicionar Período
+          Adicionar período
         </button>
       </div>
 
@@ -108,33 +119,29 @@ export function DREPage() {
       {meses.length > 0 && (
         <div className="dre-resumo">
           <div className="resumo-card receitas">
-            <div className="card-icon">💰</div>
             <div className="card-content">
-              <div className="card-label">Receitas Totais</div>
+              <div className="card-label">Receitas totais</div>
               <div className="card-value">{formatarMoeda(totais.receitas)}</div>
             </div>
           </div>
 
           <div className="resumo-card custos">
-            <div className="card-icon">📦</div>
             <div className="card-content">
-              <div className="card-label">Custos Totais</div>
+              <div className="card-label">Custos totais</div>
               <div className="card-value">{formatarMoeda(totais.custos_produtos + totais.custos_fixos)}</div>
             </div>
           </div>
 
           <div className="resumo-card lucro">
-            <div className="card-icon">📈</div>
             <div className="card-content">
-              <div className="card-label">Lucro Líquido</div>
+              <div className="card-label">Lucro líquido</div>
               <div className="card-value">{formatarMoeda(totais.lucro_liquido)}</div>
             </div>
           </div>
 
           <div className="resumo-card margem">
-            <div className="card-icon">📊</div>
             <div className="card-content">
-              <div className="card-label">Margem Líquida</div>
+              <div className="card-label">Margem líquida</div>
               <div className="card-value">
                 {totais.receitas > 0 ? ((totais.lucro_liquido / totais.receitas) * 100).toFixed(1) + '%' : '0%'}
               </div>
@@ -192,9 +199,8 @@ export function DREPage() {
         </div>
       ) : (
         <div className="empty-state">
-          <div className="empty-icon">📊</div>
           <h3>Nenhum período cadastrado</h3>
-          <p>Clique em "Adicionar Período" para começar a registrar seus resultados</p>
+          <p>Adicione um mês para começar o DRE. Os dados ficam salvos na sua conta.</p>
         </div>
       )}
 

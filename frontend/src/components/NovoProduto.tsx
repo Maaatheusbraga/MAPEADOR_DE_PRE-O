@@ -13,6 +13,7 @@ interface ProdutoEdicao {
   nome: string;
   custo_unitario: number;
   preco_venda: number;
+  observacao?: string;
   fornecedor_id?: number;
   fornecedor?: { id: number; nome: string };
 }
@@ -35,6 +36,7 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
   const [precoVenda, setPrecoVenda] = useState(
     produto ? String(produto.preco_venda) : ''
   );
+  const [observacao, setObservacao] = useState(produto?.observacao || '');
   const [calculoPrevio, setCalculoPrevio] = useState<any>(null);
   const [configuracoes, setConfiguracoes] = useState<any>(null);
   const [erro, setErro] = useState('');
@@ -168,6 +170,7 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
         fornecedor_id: parseInt(fornecedorId),
         custo_unitario: custo,
         preco_venda: preco,
+        observacao: observacao.trim(),
       };
 
       if (editando && produto) {
@@ -207,12 +210,11 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
 
   return (
     <div className="novo-produto">
-      <h2>{editando ? '✏️ Editar Produto' : '➕ Novo Produto'}</h2>
-
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Nome do Produto *</label>
+          <label htmlFor="produto-nome">Nome do produto *</label>
           <input
+            id="produto-nome"
             type="text"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
@@ -222,8 +224,9 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
         </div>
 
         <div className="form-group">
-          <label>Fornecedor *</label>
+          <label htmlFor="produto-fornecedor">Fornecedor *</label>
           <select
+            id="produto-fornecedor"
             value={fornecedorId}
             onChange={(e) => setFornecedorId(e.target.value)}
             required
@@ -246,8 +249,9 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
 
         <div className="form-row">
           <div className="form-group">
-            <label>Custo Unitário (R$) *</label>
+            <label htmlFor="produto-custo">Custo unitário (R$) *</label>
             <input
+              id="produto-custo"
               type="number"
               step="0.01"
               value={custoUnitario}
@@ -258,8 +262,9 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
           </div>
 
           <div className="form-group">
-            <label>Preço de Venda (R$) *</label>
+            <label htmlFor="produto-preco">Preço de venda (R$) *</label>
             <input
+              id="produto-preco"
               type="number"
               step="0.01"
               value={precoVenda}
@@ -270,17 +275,30 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
           </div>
         </div>
 
+        <div className="form-group">
+          <label htmlFor="produto-observacao">Observação</label>
+          <textarea
+            id="produto-observacao"
+            value={observacao}
+            onChange={(e) => setObservacao(e.target.value)}
+            placeholder="MOQ, prazo, ASIN, motivo da decisão, contato do fornecedor…"
+            maxLength={2000}
+            rows={4}
+          />
+          <small className="campo-ajuda">Opcional. Fica gravado no produto para consultar depois.</small>
+        </div>
+
         {/* Cálculo Prévio em Tempo Real */}
         {calculoPrevio && (
           <div className="calculo-previo">
             <div className="calculo-header-row">
-              <h3>📊 Cálculo Prévio (em tempo real)</h3>
+              <h3>Cálculo prévio</h3>
               <button
                 type="button"
                 onClick={() => setEditandoValores(!editandoValores)}
                 className="btn-toggle-edit"
               >
-                {editandoValores ? '🔒 Travar Valores' : '✏️ Editar Valores'}
+                {editandoValores ? 'Travar valores' : 'Editar premissas'}
               </button>
             </div>
 
@@ -292,7 +310,7 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
                 {calculoPrevio.classificacao}
               </span>
               <span className={calculoPrevio.lucrativo ? 'status-ok' : 'status-erro'}>
-                {calculoPrevio.lucrativo ? '✅ LUCRATIVO' : '❌ PREJUÍZO'}
+                {calculoPrevio.lucrativo ? 'Lucrativo' : 'Prejuízo'}
               </span>
             </div>
 
@@ -406,8 +424,7 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
 
             {editandoValores && (
               <div className="edit-info">
-                💡 <strong>Editando valores:</strong> Estes valores serão usados apenas para este produto. 
-                Deixe em branco para usar valores padrão das configurações.
+                <strong>Premissas deste produto:</strong> valem só nesta mineração. Campo vazio volta ao padrão de Configurações.
               </div>
             )}
 
@@ -429,7 +446,7 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
         {erro && <div className="error-message">{erro}</div>}
 
         <button type="submit" className="btn-primary" disabled={carregando}>
-          {carregando ? 'Salvando...' : editando ? '💾 Salvar Alterações' : '💾 Salvar Produto'}
+          {carregando ? 'Salvando...' : editando ? 'Salvar alterações' : 'Salvar produto'}
         </button>
       </form>
     </div>

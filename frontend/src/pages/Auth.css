@@ -113,29 +113,6 @@
   text-align: center;
 }
 
-.auth-info {
-  margin-top: 30px;
-  padding-top: 30px;
-  border-top: 1px solid #e0e0e0;
-}
-
-.auth-info h3 {
-  color: #333;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.auth-info ul {
-  list-style: none;
-  padding: 0;
-}
-
-.auth-info li {
-  padding: 8px 0;
-  color: #666;
-  font-size: 14px;
-}
-
 @media (max-width: 600px) {
   .auth-box {
     padding: 30px 20px;

@@ -53,24 +53,23 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid;
+  border: 1px solid #d7e4e6;
 }
 
 .resumo-card.receitas {
-  border-left-color: #4caf50;
+  background: #f3faf4;
 }
 
 .resumo-card.custos {
-  border-left-color: #f44336;
+  background: #fdf6f6;
 }
 
 .resumo-card.lucro {
-  border-left-color: var(--cor-petroleo);
+  background: var(--cor-petroleo-suave);
 }
 
 .resumo-card.margem {
-  border-left-color: var(--cor-laranja);
+  background: var(--cor-laranja-suave);
 }
 
 .resumo-card .card-icon {

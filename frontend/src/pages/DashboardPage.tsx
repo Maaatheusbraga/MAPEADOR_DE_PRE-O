@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { dashboardAPI } from '../services/api';
+import { IconBox, IconChart, IconPlus, IconWallet } from '../components/Icons';
 import './DashboardPage.css';
 
 interface Dashboard {
@@ -56,86 +57,53 @@ export function DashboardPage() {
 
   return (
     <div className="dashboard-page">
-      <div className="page-header">
-        <h2>🏠 Dashboard</h2>
-        <p>Visão geral do seu negócio</p>
+      <div className="page-header mineracao-header">
+        <div>
+          <h2>Dashboard</h2>
+          <p>Visão geral do seu negócio</p>
+        </div>
+        <button type="button" className="btn-primary" onClick={() => navigate('/produtos?novo=1')}>
+          <IconPlus /> Novo produto
+        </button>
       </div>
 
-      {/* Cards de Métricas */}
       <div className="dashboard-cards">
-        <div className="metric-card" onClick={() => navigate('/produtos')}>
-          <div className="metric-icon">📦</div>
+        <button type="button" className="metric-card" onClick={() => navigate('/produtos')}>
+          <div className="metric-icon"><IconBox /></div>
           <div className="metric-content">
             <div className="metric-value">{dashboard.estatisticas.total_produtos}</div>
-            <div className="metric-label">Total de Produtos</div>
+            <div className="metric-label">Total de produtos</div>
           </div>
-        </div>
+        </button>
 
-        <div className="metric-card success">
-          <div className="metric-icon">✅</div>
+        <button type="button" className="metric-card success" onClick={() => navigate('/produtos')}>
+          <div className="metric-icon"><IconChart /></div>
           <div className="metric-content">
             <div className="metric-value">{dashboard.estatisticas.produtos_lucrativos}</div>
-            <div className="metric-label">Produtos Lucrativos</div>
+            <div className="metric-label">Produtos lucrativos</div>
           </div>
-        </div>
+        </button>
 
         <div className="metric-card info">
-          <div className="metric-icon">📊</div>
+          <div className="metric-icon"><IconChart /></div>
           <div className="metric-content">
             <div className="metric-value">{formatarPercentual(dashboard.estatisticas.margem_media)}</div>
-            <div className="metric-label">Margem Média pós ADS</div>
+            <div className="metric-label">Margem média pós ADS</div>
           </div>
         </div>
 
         <div className="metric-card money">
-          <div className="metric-icon">💰</div>
+          <div className="metric-icon"><IconWallet /></div>
           <div className="metric-content">
             <div className="metric-value">{formatarMoeda(dashboard.estatisticas.lucro_medio)}</div>
-            <div className="metric-label">Lucro Médio</div>
+            <div className="metric-label">Lucro médio</div>
           </div>
         </div>
       </div>
 
-      {/* Atalhos Rápidos */}
-      <div className="quick-actions">
-        <h3>⚡ Ações Rápidas</h3>
-        <div className="actions-grid">
-          <button className="action-card" onClick={() => navigate('/produtos')}>
-            <span className="action-icon">📦</span>
-            <span className="action-title">Novo Produto</span>
-            <span className="action-desc">Analisar lucratividade</span>
-          </button>
-
-          <button className="action-card" onClick={() => navigate('/fornecedores')}>
-            <span className="action-icon">🏪</span>
-            <span className="action-title">Fornecedores</span>
-            <span className="action-desc">Gerenciar contatos</span>
-          </button>
-
-          <button className="action-card" onClick={() => navigate('/dre')}>
-            <span className="action-icon">📊</span>
-            <span className="action-title">DRE</span>
-            <span className="action-desc">Ver demonstrativos</span>
-          </button>
-
-          <button className="action-card" onClick={() => navigate('/fluxo-caixa')}>
-            <span className="action-icon">💰</span>
-            <span className="action-title">Fluxo de Caixa</span>
-            <span className="action-desc">Controle financeiro</span>
-          </button>
-
-          <button className="action-card" onClick={() => navigate('/configuracoes')}>
-            <span className="action-icon">⚙️</span>
-            <span className="action-title">Configurações</span>
-            <span className="action-desc">Ajustar premissas</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Top Produtos */}
       {dashboard.top_produtos.length > 0 && (
         <div className="dashboard-section">
-          <h3>🏆 Top 5 Produtos Mais Lucrativos</h3>
+          <h3>Top 5 mais lucrativos</h3>
           <div className="products-list">
             {dashboard.top_produtos.map((produto, index) => (
               <div key={produto.id} className="product-item">
@@ -161,7 +129,7 @@ export function DashboardPage() {
       {/* Produtos com Prejuízo */}
       {dashboard.produtos_prejuizo.length > 0 && (
         <div className="dashboard-section alert">
-          <h3>⚠️ Produtos com Prejuízo</h3>
+          <h3>Produtos com prejuízo</h3>
           <div className="products-list">
             {dashboard.produtos_prejuizo.map((produto) => (
               <div key={produto.id} className="product-item warning">
@@ -186,11 +154,10 @@ export function DashboardPage() {
       {/* Empty State */}
       {dashboard.estatisticas.total_produtos === 0 && (
         <div className="empty-dashboard">
-          <div className="empty-icon">📦</div>
-          <h3>Bem-vindo ao Mapeador de Preços!</h3>
-          <p>Comece cadastrando seu primeiro produto para ver análises aqui.</p>
-          <button className="btn-primary" onClick={() => navigate('/produtos')}>
-            ➕ Criar Primeiro Produto
+          <h3>Nenhum produto minerado</h3>
+          <p>Cadastre o primeiro para ver margem e lucro aqui.</p>
+          <button className="btn-primary" onClick={() => navigate('/produtos?novo=1')}>
+            Minerar primeiro produto
           </button>
         </div>
       )}

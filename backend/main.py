@@ -43,12 +43,14 @@ class CriarProdutoRequest(BaseModel):
     fornecedor_id: int = Field(..., gt=0, example=1)
     custo_unitario: float = Field(..., gt=0, example=12.50)
     preco_venda: float = Field(..., gt=0, example=33.90)
+    observacao: Optional[str] = Field("", max_length=2000, example="MOQ 50 un. Fornecedor entrega em 12 dias.")
 
 class AtualizarProdutoRequest(BaseModel):
     nome: Optional[str] = Field(None, min_length=3, max_length=255)
     fornecedor_id: Optional[int] = Field(None, gt=0)
     custo_unitario: Optional[float] = Field(None, gt=0)
     preco_venda: Optional[float] = Field(None, gt=0)
+    observacao: Optional[str] = Field(None, max_length=2000)
 
 class CriarFornecedorRequest(BaseModel):
     nome: str = Field(..., min_length=3, max_length=100, example="Utimix")
@@ -248,7 +250,8 @@ def criar_produto(dados: CriarProdutoRequest, current_user = Depends(get_current
         fornecedor_id=dados.fornecedor_id,
         custo_unitario=dados.custo_unitario,
         preco_venda=dados.preco_venda,
-        calculado=resultado
+        calculado=resultado,
+        observacao=(dados.observacao or "").strip(),
     )
     
     # Adicionar dados do fornecedor
@@ -310,6 +313,7 @@ def atualizar_produto(
     
     if dados.custo_unitario: dados_update['custo_unitario'] = dados.custo_unitario
     if dados.preco_venda: dados_update['preco_venda'] = dados.preco_venda
+    if dados.observacao is not None: dados_update['observacao'] = dados.observacao.strip()
     
     # Validar preço > custo
     if preco <= custo:
@@ -578,8 +582,40 @@ def obter_dashboard(current_user = Depends(get_current_user)):
     }
 
 
+class SalvarDreRequest(BaseModel):
+    meses: List[dict]
+
+
+class SalvarFluxoRequest(BaseModel):
+    saldo_atual: dict
+    movimentacoes: List[dict]
+    passivos: List[dict]
+    proximo_id_movimentacao: Optional[int] = 1
+    proximo_id_passivo: Optional[int] = 1
+
+
+@app.get("/api/dre", tags=["DRE"])
+def obter_dre(current_user = Depends(get_current_user)):
+    return db.obter_dre(current_user['usuario_id'])
+
+
+@app.put("/api/dre", tags=["DRE"])
+def salvar_dre(dados: SalvarDreRequest, current_user = Depends(get_current_user)):
+    return db.salvar_dre(current_user['usuario_id'], dados.meses)
+
+
+@app.get("/api/fluxo-caixa", tags=["Fluxo de Caixa"])
+def obter_fluxo(current_user = Depends(get_current_user)):
+    return db.obter_fluxo(current_user['usuario_id'])
+
+
+@app.put("/api/fluxo-caixa", tags=["Fluxo de Caixa"])
+def salvar_fluxo(dados: SalvarFluxoRequest, current_user = Depends(get_current_user)):
+    return db.salvar_fluxo(current_user['usuario_id'], dados.model_dump())
+
+
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Iniciando servidor...")
-    print("📝 Documentação: http://localhost:8000/docs")
+    print("Iniciando servidor...")
+    print("Documentacao: http://localhost:8000/docs")
     uvicorn.run(app, host="0.0.0.0", port=8000)

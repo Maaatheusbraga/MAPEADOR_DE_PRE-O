@@ -36,14 +36,18 @@
 }
 
 .btn-logout {
-  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  min-height: 44px;
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: 1px solid white;
   border-radius: 6px;
   cursor: pointer;
   font-size: 13px;
-  transition: background 0.3s;
+  transition: background 0.2s;
 }
 
 .btn-logout:hover {
@@ -67,13 +71,16 @@
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 16px 24px;
-  color: #666;
+  color: #3a4f52;
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
   border-bottom: 3px solid transparent;
-  transition: all 0.3s;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
   white-space: nowrap;
 }
 

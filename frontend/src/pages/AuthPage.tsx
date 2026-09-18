@@ -32,7 +32,12 @@ export function AuthPage() {
       }
       navigate('/produtos');
     } catch (error: any) {
-      setErro(error.response?.data?.detail || 'Erro ao processar requisição');
+      if (!error.response) {
+        setErro('Não foi possível conectar ao servidor. Confira se o backend está rodando em http://localhost:8000.');
+      } else {
+        const detalhe = error.response?.data?.detail;
+        setErro(typeof detalhe === 'string' ? detalhe : 'Erro ao processar requisição');
+      }
     } finally {
       setCarregando(false);
     }
@@ -41,7 +46,7 @@ export function AuthPage() {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h1>🛒 Mapeador de Preços</h1>
+        <h1>Mapeador de Preços</h1>
         <p className="subtitle">Analise a lucratividade dos seus produtos Amazon FBA</p>
 
         <div className="auth-tabs">
@@ -108,17 +113,6 @@ export function AuthPage() {
             {carregando ? 'Aguarde...' : modo === 'login' ? 'Entrar' : 'Criar Conta'}
           </button>
         </form>
-
-        <div className="auth-info">
-          <h3>💡 Por que usar?</h3>
-          <ul>
-            <li>✅ Calcule margem de lucro automaticamente</li>
-            <li>✅ Considere todos os custos (prep, frete, ads, impostos)</li>
-            <li>✅ Veja quais produtos são lucrativos</li>
-            <li>✅ Simule diferentes cenários</li>
-            <li>✅ Gerencie fornecedores</li>
-          </ul>
-        </div>
       </div>
     </div>
   );

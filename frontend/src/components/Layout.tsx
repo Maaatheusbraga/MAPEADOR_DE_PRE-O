@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { IconHome, IconBox, IconStore, IconChart, IconWallet, IconGear, IconLogout } from './Icons';
 import './Layout.css';
 
 interface Props {
@@ -12,42 +13,41 @@ export function Layout({ children }: Props) {
 
   return (
     <div className="layout">
-      {/* Header */}
       <header className="layout-header">
         <div className="header-content">
-          <h1>🛒 Mapeador de Preços</h1>
+          <h1>Mapeador de Preços</h1>
           <div className="user-info">
-            <span>👤 {usuario?.nome || usuario?.email}</span>
-            <button onClick={logout} className="btn-logout">Sair</button>
+            <span>{usuario?.nome || usuario?.email}</span>
+            <button type="button" onClick={logout} className="btn-logout">
+              <IconLogout /> Sair
+            </button>
           </div>
         </div>
       </header>
 
-      {/* Navigation */}
-      <nav className="layout-nav">
+      <nav className="layout-nav" aria-label="Principal">
         <div className="nav-content">
           <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            🏠 Dashboard
+            <IconHome /> Dashboard
           </NavLink>
           <NavLink to="/produtos" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            📦 Produtos
+            <IconBox /> Produtos
           </NavLink>
           <NavLink to="/fornecedores" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            🏪 Fornecedores
+            <IconStore /> Fornecedores
           </NavLink>
           <NavLink to="/dre" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            📊 DRE
+            <IconChart /> DRE
           </NavLink>
           <NavLink to="/fluxo-caixa" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            💰 Fluxo de Caixa
+            <IconWallet /> Fluxo de Caixa
           </NavLink>
           <NavLink to="/configuracoes" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            ⚙️ Configurações
+            <IconGear /> Configurações
           </NavLink>
         </div>
       </nav>
 
-      {/* Main Content */}
       <main className="layout-main">
         {children}
       </main>

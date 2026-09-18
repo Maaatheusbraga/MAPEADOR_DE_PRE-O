@@ -259,7 +259,7 @@ class Database:
     
     def criar_produto(self, usuario_id: int, nome: str, fornecedor_id: int,
                      custo_unitario: float, preco_venda: float,
-                     calculado: Dict) -> Dict:
+                     calculado: Dict, observacao: str = "") -> Dict:
         """Cria novo produto para um usuário"""
         filepath = self._get_user_file(usuario_id, "produtos.json")
         data = self._load_json(filepath)
@@ -270,6 +270,7 @@ class Database:
             "fornecedor_id": fornecedor_id,
             "custo_unitario": custo_unitario,
             "preco_venda": preco_venda,
+            "observacao": observacao or "",
             "calculado": calculado,
             "ativo": True,
             "created_at": datetime.now().isoformat(),
@@ -286,7 +287,7 @@ class Database:
         """Lista produtos de um usuário"""
         filepath = self._get_user_file(usuario_id, "produtos.json")
         data = self._load_json(filepath)
-        return [p for p in data['produtos'] if p['ativo']]
+        return [p if 'observacao' in p else {**p, 'observacao': ''} for p in data['produtos'] if p['ativo']]
     
     def obter_produto(self, usuario_id: int, produto_id: int) -> Optional[Dict]:
         """Obtém um produto específico"""
@@ -306,7 +307,7 @@ class Database:
         for i, p in enumerate(data['produtos']):
             if p['id'] == produto_id and p['ativo']:
                 # Atualizar campos
-                for campo in ['nome', 'fornecedor_id', 'custo_unitario', 'preco_venda', 'calculado']:
+                for campo in ['nome', 'fornecedor_id', 'custo_unitario', 'preco_venda', 'observacao', 'calculado']:
                     if campo in dados:
                         data['produtos'][i][campo] = dados[campo]
                 
@@ -352,3 +353,62 @@ class Database:
             "margem_media": sum(margens) / len(margens) if margens else 0,
             "lucro_medio": sum(lucros) / len(lucros) if lucros else 0
         }
+
+    def _ensure_user_file(self, usuario_id: int, filename: str, padrao: Dict) -> Path:
+        filepath = self._get_user_file(usuario_id, filename)
+        filepath.parent.mkdir(parents=True, exist_ok=True)
+        if not filepath.exists():
+            self._save_json(filepath, padrao)
+        return filepath
+
+    def obter_dre(self, usuario_id: int) -> Dict:
+        filepath = self._ensure_user_file(usuario_id, "dre.json", {
+            "usuario_id": usuario_id,
+            "meses": []
+        })
+        return self._load_json(filepath)
+
+    def salvar_dre(self, usuario_id: int, meses: List[Dict]) -> Dict:
+        filepath = self._ensure_user_file(usuario_id, "dre.json", {
+            "usuario_id": usuario_id,
+            "meses": []
+        })
+        data = {
+            "usuario_id": usuario_id,
+            "meses": meses,
+            "updated_at": datetime.now().isoformat()
+        }
+        self._save_json(filepath, data)
+        return data
+
+    def obter_fluxo(self, usuario_id: int) -> Dict:
+        filepath = self._ensure_user_file(usuario_id, "fluxo_caixa.json", {
+            "usuario_id": usuario_id,
+            "saldo_atual": {"caixa": 0, "banco": 0, "total": 0},
+            "movimentacoes": [],
+            "passivos": [],
+            "proximo_id_movimentacao": 1,
+            "proximo_id_passivo": 1
+        })
+        return self._load_json(filepath)
+
+    def salvar_fluxo(self, usuario_id: int, payload: Dict) -> Dict:
+        atual = self.obter_fluxo(usuario_id)
+        data = {
+            "usuario_id": usuario_id,
+            "saldo_atual": payload.get("saldo_atual", atual.get("saldo_atual")),
+            "movimentacoes": payload.get("movimentacoes", atual.get("movimentacoes", [])),
+            "passivos": payload.get("passivos", atual.get("passivos", [])),
+            "proximo_id_movimentacao": payload.get(
+                "proximo_id_movimentacao",
+                atual.get("proximo_id_movimentacao", 1)
+            ),
+            "proximo_id_passivo": payload.get(
+                "proximo_id_passivo",
+                atual.get("proximo_id_passivo", 1)
+            ),
+            "updated_at": datetime.now().isoformat()
+        }
+        filepath = self._get_user_file(usuario_id, "fluxo_caixa.json")
+        self._save_json(filepath, data)
+        return data

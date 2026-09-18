@@ -21,8 +21,8 @@
   display: flex;
   gap: 15px;
   padding: 20px;
-  background: #e3f2fd;
-  border-left: 4px solid var(--cor-petroleo);
+  background: var(--cor-petroleo-suave);
+  border: 1px solid #c5dadd;
   border-radius: 8px;
 }
 
@@ -33,7 +33,7 @@
 .info-content {
   flex: 1;
   font-size: 14px;
-  color: #1976d2;
+  color: var(--cor-petroleo-escuro);
   line-height: 1.6;
 }
 

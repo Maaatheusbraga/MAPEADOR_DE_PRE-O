@@ -75,25 +75,19 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid;
-  transition: transform 0.3s;
-}
-
-.saldo-card:hover {
-  transform: translateY(-2px);
+  border: 1px solid #d7e4e6;
 }
 
 .saldo-card.caixa {
-  border-left-color: #4caf50;
+  background: #f3faf4;
 }
 
 .saldo-card.banco {
-  border-left-color: var(--cor-petroleo);
+  background: var(--cor-petroleo-suave);
 }
 
 .saldo-card.total {
-  border-left-color: var(--cor-petroleo);
+  background: var(--cor-petroleo-suave);
 }
 
 .saldo-card.passivos {
@@ -225,21 +219,19 @@
   padding: 16px;
   background: #f8f9fa;
   border-radius: 10px;
-  border-left: 4px solid;
-  transition: all 0.3s;
+  border: 1px solid #d7e4e6;
 }
 
 .mov-card:hover {
-  background: #f0f0f0;
-  transform: translateX(4px);
+  background: #eef4f4;
 }
 
 .mov-card.entrada {
-  border-left-color: #4caf50;
+  background: #f3faf4;
 }
 
 .mov-card.saida {
-  border-left-color: #f44336;
+  background: #fdf6f6;
 }
 
 .mov-icon {
@@ -325,15 +317,14 @@
   align-items: center;
   gap: 16px;
   padding: 16px;
-  background: #fff3e0;
+  background: var(--cor-laranja-suave);
   border-radius: 10px;
-  border-left: 4px solid var(--cor-laranja);
-  transition: all 0.3s;
+  border: 1px solid #f3d2bc;
 }
 
 .passivo-card.pago {
-  background: #e8f5e9;
-  border-left-color: #4caf50;
+  background: #f3faf4;
+  border-color: #c5dadd;
   opacity: 0.7;
 }
 

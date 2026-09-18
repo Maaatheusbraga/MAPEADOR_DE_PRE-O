@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { produtosAPI, fornecedoresAPI, dashboardAPI } from '../services/api';
+import { useSearchParams } from 'react-router-dom';
+import { produtosAPI, fornecedoresAPI } from '../services/api';
 import { NovoProduto } from '../components/NovoProduto';
+import { IconPlus, IconPencil, IconTrash } from '../components/Icons';
 import './ProdutosPage.css';
 
 interface Produto {
@@ -8,6 +10,7 @@ interface Produto {
   nome: string;
   custo_unitario: number;
   preco_venda: number;
+  observacao?: string;
   fornecedor_id?: number;
   fornecedor?: { id: number; nome: string };
   calculado: {
@@ -26,39 +29,45 @@ interface Fornecedor {
   prioritario?: boolean;
 }
 
-interface Dashboard {
-  estatisticas: {
-    total_produtos: number;
-    produtos_lucrativos: number;
-    margem_media: number;
-    lucro_medio: number;
-  };
+function classeBadge(classificacao: string) {
+  switch (classificacao) {
+    case 'EXCELENTE': return 'badge badge-excelente';
+    case 'BOM': return 'badge badge-bom';
+    case 'MARGINAL': return 'badge badge-marginal';
+    case 'PREJUÍZO': return 'badge badge-prejuizo';
+    default: return 'badge';
+  }
 }
 
 export function ProdutosPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>([]);
-  const [dashboard, setDashboard] = useState<Dashboard | null>(null);
   const [mostrarForm, setMostrarForm] = useState(false);
   const [produtoEdicao, setProdutoEdicao] = useState<Produto | null>(null);
   const [carregando, setCarregando] = useState(true);
+  const [busca, setBusca] = useState('');
 
   useEffect(() => {
     carregarDados();
   }, []);
 
+  useEffect(() => {
+    if (searchParams.get('novo') === '1') {
+      setProdutoEdicao(null);
+      setMostrarForm(true);
+    }
+  }, [searchParams]);
+
   const carregarDados = async () => {
     try {
       setCarregando(true);
-      const [produtosRes, fornecedoresRes, dashboardRes] = await Promise.all([
+      const [produtosRes, fornecedoresRes] = await Promise.all([
         produtosAPI.listar(),
         fornecedoresAPI.listar(),
-        dashboardAPI.obter(),
       ]);
-      
       setProdutos(produtosRes.produtos || []);
       setFornecedores(fornecedoresRes.fornecedores || []);
-      setDashboard(dashboardRes);
     } catch (error) {
       console.error('Erro ao carregar dados:', error);
     } finally {
@@ -66,9 +75,16 @@ export function ProdutosPage() {
     }
   };
 
+  const abrirNovo = () => {
+    setProdutoEdicao(null);
+    setMostrarForm(true);
+    setSearchParams({ novo: '1' });
+  };
+
   const fecharForm = () => {
     setMostrarForm(false);
     setProdutoEdicao(null);
+    setSearchParams({});
   };
 
   const handleSalvo = async () => {
@@ -79,6 +95,7 @@ export function ProdutosPage() {
   const handleEditar = (produto: Produto) => {
     setProdutoEdicao(produto);
     setMostrarForm(true);
+    setSearchParams({});
   };
 
   const handleExcluir = async (id: number) => {
@@ -104,183 +121,138 @@ export function ProdutosPage() {
     return `${(valor * 100).toFixed(2)}%`;
   };
 
-  const getClassificacaoColor = (classificacao: string) => {
-    switch (classificacao) {
-      case 'EXCELENTE': return '#4caf50';
-      case 'BOM': return '#2196f3';
-      case 'MARGINAL': return '#ff9800';
-      case 'PREJUÍZO': return '#f44336';
-      default: return '#9e9e9e';
-    }
-  };
+  const produtosFiltrados = produtos.filter((produto) => {
+    const termo = busca.trim().toLowerCase();
+    if (!termo) return true;
+    const obs = (produto.observacao || '').toLowerCase();
+    const fornecedor = (produto.fornecedor?.nome || '').toLowerCase();
+    return produto.nome.toLowerCase().includes(termo) || obs.includes(termo) || fornecedor.includes(termo);
+  });
 
   if (carregando) {
     return (
       <div className="produtos-container">
-        <div className="loading">Carregando...</div>
+        <div className="loading">Carregando produtos…</div>
+      </div>
+    );
+  }
+
+  if (mostrarForm) {
+    return (
+      <div className="produtos-container">
+        <div className="page-header mineracao-header">
+          <div>
+            <h2>{produtoEdicao ? 'Editar produto' : 'Minerar produto'}</h2>
+            <p>Custo, preço, margem e anotação da decisão</p>
+          </div>
+          <button type="button" className="btn-voltar" onClick={fecharForm}>
+            Voltar à lista
+          </button>
+        </div>
+        <div className="mineracao-painel">
+          <NovoProduto
+            key={produtoEdicao ? `edit-${produtoEdicao.id}` : 'novo'}
+            fornecedores={fornecedores}
+            produto={produtoEdicao}
+            onSucesso={handleSalvo}
+          />
+        </div>
       </div>
     );
   }
 
   return (
     <div className="produtos-container">
-      {/* Page Header */}
-      <div className="page-header">
-        <h2>📦 Produtos</h2>
-        <p>Análise de lucratividade dos seus produtos</p>
-      </div>
-
-      {/* Dashboard */}
-      {dashboard && (
-        <div className="dashboard">
-          <div className="dashboard-card">
-            <div className="card-icon">📦</div>
-            <div className="card-content">
-              <div className="card-value">{dashboard.estatisticas.total_produtos}</div>
-              <div className="card-label">Total de Produtos</div>
-            </div>
-          </div>
-
-          <div className="dashboard-card">
-            <div className="card-icon">✅</div>
-            <div className="card-content">
-              <div className="card-value">{dashboard.estatisticas.produtos_lucrativos}</div>
-              <div className="card-label">Produtos Lucrativos</div>
-            </div>
-          </div>
-
-          <div className="dashboard-card">
-            <div className="card-icon">📊</div>
-            <div className="card-content">
-              <div className="card-value">{formatarPercentual(dashboard.estatisticas.margem_media)}</div>
-              <div className="card-label">Margem Média pós ADS</div>
-            </div>
-          </div>
-
-          <div className="dashboard-card">
-            <div className="card-icon">💰</div>
-            <div className="card-content">
-              <div className="card-value">{formatarMoeda(dashboard.estatisticas.lucro_medio)}</div>
-              <div className="card-label">Lucro Médio</div>
-            </div>
-          </div>
+      <div className="page-header mineracao-header">
+        <div>
+          <h2>Produtos</h2>
+          <p>Compare margem, lucro e anotações da mineração</p>
         </div>
-      )}
-
-      {/* Botão Novo Produto */}
-      <div className="actions">
-        <button onClick={() => { setProdutoEdicao(null); setMostrarForm(true); }} className="btn-novo">
-          ➕ Novo Produto
+        <button type="button" onClick={abrirNovo} className="btn-novo">
+          <IconPlus /> Novo produto
         </button>
       </div>
 
-      {/* Modal Novo Produto */}
-      {mostrarForm && (
-        <div className="modal-overlay" onClick={fecharForm}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={fecharForm}>✕</button>
-            <NovoProduto 
-              key={produtoEdicao ? `edit-${produtoEdicao.id}` : 'novo'}
-              fornecedores={fornecedores}
-              produto={produtoEdicao}
-              onSucesso={handleSalvo}
-            />
-          </div>
+      <div className="lista-toolbar">
+        <label htmlFor="busca-produtos" className="sr-only">Buscar produtos</label>
+        <input
+          id="busca-produtos"
+          type="search"
+          value={busca}
+          onChange={(e) => setBusca(e.target.value)}
+          placeholder="Buscar por nome, fornecedor ou observação"
+        />
+        <span className="lista-contagem">{produtosFiltrados.length} produto{produtosFiltrados.length === 1 ? '' : 's'}</span>
+      </div>
+
+      {produtos.length === 0 ? (
+        <div className="empty-state">
+          <h2>Nenhum produto minerado</h2>
+          <p>Cadastre o primeiro para ver custo, margem sem ads e margem pós ADS lado a lado.</p>
+          <button type="button" className="btn-novo" onClick={abrirNovo}>
+            <IconPlus /> Minerar produto
+          </button>
+        </div>
+      ) : produtosFiltrados.length === 0 ? (
+        <div className="empty-state">
+          <h2>Nada encontrado</h2>
+          <p>Nenhum produto bate com “{busca}”.</p>
+        </div>
+      ) : (
+        <div className="tabela-wrap">
+          <table className="produtos-tabela">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Fornecedor</th>
+                <th className="num">Custo</th>
+                <th className="num">Venda</th>
+                <th className="num">Margem</th>
+                <th className="num">Pós ADS</th>
+                <th>Situação</th>
+                <th>Observação</th>
+                <th className="acoes">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {produtosFiltrados.map((produto) => (
+                <tr key={produto.id}>
+                  <td>
+                    <strong>{produto.nome}</strong>
+                  </td>
+                  <td>{produto.fornecedor?.nome || '—'}</td>
+                  <td className="num">{formatarMoeda(produto.custo_unitario)}</td>
+                  <td className="num">{formatarMoeda(produto.preco_venda)}</td>
+                  <td className="num">
+                    {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)}
+                    <small>{formatarMoeda(produto.calculado.lucro_sem_ads ?? produto.calculado.lucro_com_ads)}</small>
+                  </td>
+                  <td className="num destaque">
+                    {formatarPercentual(produto.calculado.margem_com_ads)}
+                    <small>{formatarMoeda(produto.calculado.lucro_com_ads)}</small>
+                  </td>
+                  <td>
+                    <span className={classeBadge(produto.calculado.classificacao)}>
+                      {produto.calculado.classificacao}
+                    </span>
+                  </td>
+                  <td className="obs">
+                    {produto.observacao?.trim() ? produto.observacao : '—'}
+                  </td>
+                  <td className="acoes">
+                    <button type="button" className="btn-icone" onClick={() => handleEditar(produto)}>
+                      <IconPencil /> Editar
+                    </button>
+                    <button type="button" className="btn-icone perigo" onClick={() => handleExcluir(produto.id)}>
+                      <IconTrash /> Excluir
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
-
-      {/* Lista de Produtos */}
-      <div className="produtos-lista">
-        {produtos.length === 0 ? (
-          <div className="empty-state">
-            <h2>📦 Nenhum produto cadastrado</h2>
-            <p>Clique em "Novo Produto" para começar a analisar a lucratividade!</p>
-          </div>
-        ) : (
-          produtos.map((produto) => (
-            <div key={produto.id} className="produto-card">
-              <div className="produto-header">
-                <h3>{produto.nome}</h3>
-                <span 
-                  className="badge"
-                  style={{ backgroundColor: getClassificacaoColor(produto.calculado.classificacao) }}
-                >
-                  {produto.calculado.classificacao}
-                </span>
-              </div>
-
-              <div className="produto-info">
-                <div className="info-row">
-                  <span className="label">Fornecedor:</span>
-                  <span className="value">{produto.fornecedor?.nome || 'N/A'}</span>
-                </div>
-
-                <div className="info-row">
-                  <span className="label">Custo:</span>
-                  <span className="value">{formatarMoeda(produto.custo_unitario)}</span>
-                </div>
-
-                <div className="info-row">
-                  <span className="label">Preço de Venda:</span>
-                  <span className="value">{formatarMoeda(produto.preco_venda)}</span>
-                </div>
-              </div>
-
-              <div className="produto-resultados">
-                <div className="resultado-item">
-                  <div className="resultado-label">Margem de Lucro</div>
-                  <div className="resultado-valor">
-                    {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)}
-                  </div>
-                </div>
-
-                <div className="resultado-item">
-                  <div className="resultado-label">Lucro</div>
-                  <div className="resultado-valor">
-                    {formatarMoeda(produto.calculado.lucro_sem_ads ?? produto.calculado.lucro_com_ads)}
-                  </div>
-                </div>
-
-                <div className="resultado-item">
-                  <div className="resultado-label">Margem pós ADS</div>
-                  <div className="resultado-valor destaque">
-                    {formatarPercentual(produto.calculado.margem_com_ads)}
-                  </div>
-                </div>
-
-                <div className="resultado-item">
-                  <div className="resultado-label">Lucro pós ADS</div>
-                  <div className="resultado-valor destaque">
-                    {formatarMoeda(produto.calculado.lucro_com_ads)}
-                  </div>
-                </div>
-
-                <div className="resultado-item">
-                  <div className="resultado-label">Status</div>
-                  <div className="resultado-valor">
-                    {produto.calculado.lucrativo ? '✅ LUCRATIVO' : '❌ PREJUÍZO'}
-                  </div>
-                </div>
-              </div>
-
-              <div className="produto-actions">
-                <button 
-                  onClick={() => handleEditar(produto)}
-                  className="btn-editar"
-                >
-                  ✏️ Editar
-                </button>
-                <button 
-                  onClick={() => handleExcluir(produto.id)}
-                  className="btn-excluir"
-                >
-                  🗑️ Excluir
-                </button>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
     </div>
   );
 }
