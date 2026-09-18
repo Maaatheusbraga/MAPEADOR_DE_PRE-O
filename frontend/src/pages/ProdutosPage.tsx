@@ -367,22 +367,15 @@ export function ProdutosPage() {
           <table className="produtos-tabela">
             <thead>
               <tr>
-                <th>
+                <th className="col-produto">
                   <button type="button" className="th-sort" onClick={() => alternarOrdem('nome')}>
                     Produto{marcaOrdem('nome')}
                   </button>
                 </th>
-                <th>Fornecedor</th>
-                <th className="num">Custo</th>
-                <th className="num">Venda</th>
-                <th className="num">
-                  <button type="button" className="th-sort" onClick={() => alternarOrdem('margem')}>
-                    Margem{marcaOrdem('margem')}
-                  </button>
-                </th>
+                <th className="num">Preços</th>
                 <th className="num">
                   <button type="button" className="th-sort" onClick={() => alternarOrdem('posAds')}>
-                    Pós ADS{marcaOrdem('posAds')}
+                    Margens{marcaOrdem('posAds')}
                   </button>
                 </th>
                 <th>Situação</th>
@@ -391,34 +384,56 @@ export function ProdutosPage() {
                     Decisão{marcaOrdem('decisao')}
                   </button>
                 </th>
-                <th>Link</th>
-                <th>Observação</th>
+                <th className="col-obs">Observação</th>
                 <th className="acoes">Ações</th>
               </tr>
             </thead>
             <tbody>
               {produtosVisiveis.map((produto) => (
                 <tr key={produto.id} className={produto.decisao === 'descartado' ? 'linha-descartada' : undefined}>
-                  <td>
-                    <strong>{produto.nome}</strong>
+                  <td className="col-produto" data-label="Produto">
+                    <strong className="nome-produto">{produto.nome}</strong>
+                    <span className="meta-produto">
+                      {produto.fornecedor?.nome || 'Sem fornecedor'}
+                      {hrefSeguro(produto.link_fornecedor) && (
+                        <>
+                          {' · '}
+                          <a
+                            className="link-fornecedor"
+                            href={hrefSeguro(produto.link_fornecedor)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Abrir no fornecedor
+                          </a>
+                        </>
+                      )}
+                    </span>
                   </td>
-                  <td>{produto.fornecedor?.nome || '—'}</td>
-                  <td className="num">{formatarMoeda(produto.custo_unitario)}</td>
-                  <td className="num">{formatarMoeda(produto.preco_venda)}</td>
-                  <td className="num">
-                    {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)}
-                    <small>{formatarMoeda(produto.calculado.lucro_sem_ads ?? produto.calculado.lucro_com_ads)}</small>
+                  <td className="num" data-label="Preços">
+                    <span className="celula-pilha">
+                      <span><small>Custo</small> {formatarMoeda(produto.custo_unitario)}</span>
+                      <span><small>Venda</small> {formatarMoeda(produto.preco_venda)}</span>
+                    </span>
                   </td>
-                  <td className="num destaque">
-                    {formatarPercentual(produto.calculado.margem_com_ads)}
-                    <small>{formatarMoeda(produto.calculado.lucro_com_ads)}</small>
+                  <td className="num" data-label="Margens">
+                    <span className="celula-pilha">
+                      <span>
+                        <small>Sem ads</small>{' '}
+                        {formatarPercentual(produto.calculado.margem_sem_ads ?? produto.calculado.margem_com_ads)}
+                      </span>
+                      <span className="destaque">
+                        <small>Pós ADS</small>{' '}
+                        {formatarPercentual(produto.calculado.margem_com_ads)}
+                      </span>
+                    </span>
                   </td>
-                  <td>
+                  <td data-label="Situação">
                     <span className={classeBadge(produto.calculado.classificacao)}>
                       {produto.calculado.classificacao}
                     </span>
                   </td>
-                  <td>
+                  <td data-label="Decisão">
                     <label className="sr-only" htmlFor={`decisao-${produto.id}`}>Decisão de {produto.nome}</label>
                     <select
                       id={`decisao-${produto.id}`}
@@ -431,32 +446,18 @@ export function ProdutosPage() {
                       <option value="descartado">Descartado</option>
                     </select>
                   </td>
-                  <td>
-                    {hrefSeguro(produto.link_fornecedor) ? (
-                      <a
-                        className="link-fornecedor"
-                        href={hrefSeguro(produto.link_fornecedor)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Abrir
-                      </a>
-                    ) : (
-                      '—'
-                    )}
-                  </td>
-                  <td className="obs">
+                  <td className="obs" data-label="Observação">
                     {produto.observacao?.trim() ? produto.observacao : '—'}
                   </td>
-                  <td className="acoes">
-                    <button type="button" className="btn-icone" onClick={() => handleEditar(produto)}>
-                      <IconPencil /> Editar
+                  <td className="acoes" data-label="Ações">
+                    <button type="button" className="btn-icone" onClick={() => handleEditar(produto)} title="Editar" aria-label={`Editar ${produto.nome}`}>
+                      <IconPencil /> <span className="rotulo-acao">Editar</span>
                     </button>
-                    <button type="button" className="btn-icone" onClick={() => handleDuplicar(produto)}>
-                      <IconCopy /> Duplicar
+                    <button type="button" className="btn-icone" onClick={() => handleDuplicar(produto)} title="Duplicar" aria-label={`Duplicar ${produto.nome}`}>
+                      <IconCopy /> <span className="rotulo-acao">Duplicar</span>
                     </button>
-                    <button type="button" className="btn-icone perigo" onClick={() => handleExcluir(produto.id)}>
-                      <IconTrash /> Excluir
+                    <button type="button" className="btn-icone perigo" onClick={() => handleExcluir(produto.id)} title="Excluir" aria-label={`Excluir ${produto.nome}`}>
+                      <IconTrash /> <span className="rotulo-acao">Excluir</span>
                     </button>
                   </td>
                 </tr>

@@ -177,11 +177,12 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
 }
 
 .produtos-tabela th,
 .produtos-tabela td {
-  padding: 12px 14px;
+  padding: 12px;
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid #e7eeee;
@@ -198,17 +199,50 @@
   background: var(--cor-petroleo-suave);
 }
 
+.col-produto {
+  width: 32%;
+}
+
+.nome-produto {
+  display: block;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-wrap: pretty;
+}
+
+.meta-produto {
+  display: block;
+  margin-top: 4px;
+  color: #3a4f52;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.celula-pilha {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.celula-pilha small {
+  display: inline-block;
+  min-width: 3.6rem;
+  margin-right: 6px;
+  color: #3a4f52;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 .produtos-tabela .num {
+  width: 12%;
   text-align: right;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-}
-
-.produtos-tabela .num small {
-  display: block;
-  margin-top: 2px;
-  color: #3a4f52;
-  font-weight: 500;
 }
 
 .produtos-tabela .destaque {
@@ -216,10 +250,13 @@
   color: var(--cor-petroleo-escuro);
 }
 
+.col-obs,
 .produtos-tabela .obs {
-  max-width: 240px;
+  width: 16%;
   color: #3a4f52;
   line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .link-fornecedor {
@@ -234,6 +271,7 @@
 }
 
 .produtos-tabela .acoes {
+  width: 9.5rem;
   white-space: nowrap;
 }
 
@@ -269,10 +307,12 @@
 .btn-icone {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  margin-right: 6px;
+  margin: 0 4px 4px 0;
   padding: 8px 10px;
   min-height: 44px;
+  min-width: 44px;
   background: transparent;
   border: 1px solid #c5dadd;
   border-radius: 8px;
@@ -321,7 +361,17 @@
   color: #3a4f52;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .rotulo-acao {
+    display: none;
+  }
+
+  .produtos-tabela .acoes {
+    width: 7.5rem;
+  }
+}
+
+@media (max-width: 860px) {
   .mineracao-header {
     flex-direction: column;
     align-items: stretch;
@@ -330,6 +380,56 @@
   .lista-toolbar {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .produtos-tabela {
+    table-layout: auto;
+  }
+
+  .produtos-tabela thead {
+    display: none;
+  }
+
+  .produtos-tabela tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    padding: 16px;
+    border-bottom: 1px solid #e7eeee;
+  }
+
+  .produtos-tabela tbody td {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: auto;
+    padding: 0;
+    border: none;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .produtos-tabela tbody td::before {
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 700;
+    color: #3a4f52;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .col-produto,
+  .produtos-tabela .obs,
+  .produtos-tabela .acoes {
+    grid-column: 1 / -1;
+  }
+
+  .celula-pilha {
+    align-items: flex-start;
+  }
+
+  .select-decisao {
+    max-width: none;
   }
 }
 
