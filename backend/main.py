@@ -44,6 +44,13 @@ class CriarProdutoRequest(BaseModel):
     custo_unitario: float = Field(..., gt=0, example=12.50)
     preco_venda: float = Field(..., gt=0, example=33.90)
     observacao: Optional[str] = Field("", max_length=2000, example="MOQ 50 un. Fornecedor entrega em 12 dias.")
+    link_fornecedor: Optional[str] = Field("", max_length=500, example="https://www.utimix.com/tabua-inox")
+    decisao: Optional[str] = Field("analise")
+    tacos: Optional[float] = Field(None, ge=0, le=1)
+    taxa_comissao: Optional[float] = Field(None, ge=0, le=1)
+    custo_prep: Optional[float] = Field(None, ge=0)
+    frete_fba: Optional[float] = Field(None, ge=0)
+    aliquota_imposto: Optional[float] = Field(None, ge=0, le=1)
 
 class AtualizarProdutoRequest(BaseModel):
     nome: Optional[str] = Field(None, min_length=3, max_length=255)
@@ -51,6 +58,13 @@ class AtualizarProdutoRequest(BaseModel):
     custo_unitario: Optional[float] = Field(None, gt=0)
     preco_venda: Optional[float] = Field(None, gt=0)
     observacao: Optional[str] = Field(None, max_length=2000)
+    link_fornecedor: Optional[str] = Field(None, max_length=500)
+    decisao: Optional[str] = None
+    tacos: Optional[float] = Field(None, ge=0, le=1)
+    taxa_comissao: Optional[float] = Field(None, ge=0, le=1)
+    custo_prep: Optional[float] = Field(None, ge=0)
+    frete_fba: Optional[float] = Field(None, ge=0)
+    aliquota_imposto: Optional[float] = Field(None, ge=0, le=1)
 
 class CriarFornecedorRequest(BaseModel):
     nome: str = Field(..., min_length=3, max_length=100, example="Utimix")
@@ -100,6 +114,42 @@ def get_current_user(authorization: str = Header(None)):
         )
     
     return payload
+
+
+def normalizar_link(url: str) -> str:
+    link = (url or "").strip()
+    if not link:
+        return ""
+    baixo = link.lower()
+    if baixo.startswith(("javascript:", "data:", "vbscript:")):
+        return ""
+    if not baixo.startswith(("http://", "https://")):
+        link = "https://" + link
+    return link[:500]
+
+
+DECISIOES_VALIDAS = {"analise", "vender", "descartado"}
+CAMPOS_PREMISSA = ("tacos", "taxa_comissao", "custo_prep", "frete_fba", "aliquota_imposto")
+
+
+def validar_decisao(valor: Optional[str]) -> str:
+    decisao = (valor or "analise").strip().lower()
+    if decisao not in DECISIOES_VALIDAS:
+        raise HTTPException(status_code=400, detail="Decisão inválida")
+    return decisao
+
+
+def montar_premissas(globais: dict, produto: Optional[dict] = None, dados=None) -> dict:
+    usadas = dict(globais)
+    if produto and isinstance(produto.get("premissas"), dict):
+        usadas.update({k: produto["premissas"][k] for k in CAMPOS_PREMISSA if k in produto["premissas"]})
+    if dados is not None:
+        for campo in CAMPOS_PREMISSA:
+            valor = getattr(dados, campo, None)
+            if valor is not None:
+                usadas[campo] = valor
+    return usadas
+
 
 # ============================================
 # ENDPOINTS - ROOT
@@ -235,10 +285,11 @@ def criar_produto(dados: CriarProdutoRequest, current_user = Depends(get_current
     # Calcular margem
     try:
         config = db.obter_configuracoes()
+        premissas = montar_premissas(config['premissas'], dados=dados)
         resultado = calc.calcular(
             custo_unitario=dados.custo_unitario,
             preco_venda=dados.preco_venda,
-            config=config['premissas']
+            config=premissas
         )
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
@@ -252,6 +303,9 @@ def criar_produto(dados: CriarProdutoRequest, current_user = Depends(get_current
         preco_venda=dados.preco_venda,
         calculado=resultado,
         observacao=(dados.observacao or "").strip(),
+        link_fornecedor=normalizar_link(dados.link_fornecedor or ""),
+        decisao=validar_decisao(dados.decisao),
+        premissas=premissas,
     )
     
     # Adicionar dados do fornecedor
@@ -307,29 +361,41 @@ def atualizar_produto(
             raise HTTPException(status_code=404, detail="Fornecedor não encontrado")
         dados_update['fornecedor_id'] = dados.fornecedor_id
     
-    # Se custo ou preço mudaram, recalcular
     custo = dados.custo_unitario if dados.custo_unitario else produto_atual['custo_unitario']
     preco = dados.preco_venda if dados.preco_venda else produto_atual['preco_venda']
     
     if dados.custo_unitario: dados_update['custo_unitario'] = dados.custo_unitario
     if dados.preco_venda: dados_update['preco_venda'] = dados.preco_venda
     if dados.observacao is not None: dados_update['observacao'] = dados.observacao.strip()
-    
-    # Validar preço > custo
-    if preco <= custo:
-        raise HTTPException(
-            status_code=400,
-            detail="Preço de venda deve ser maior que custo unitário"
-        )
-    
-    # Recalcular
-    config = db.obter_configuracoes()
-    resultado = calc.calcular(
-        custo_unitario=custo,
-        preco_venda=preco,
-        config=config['premissas']
+    if dados.link_fornecedor is not None: dados_update['link_fornecedor'] = normalizar_link(dados.link_fornecedor)
+    if dados.decisao is not None: dados_update['decisao'] = validar_decisao(dados.decisao)
+
+    so_decisao = (
+        dados.decisao is not None
+        and dados.nome is None
+        and dados.fornecedor_id is None
+        and dados.custo_unitario is None
+        and dados.preco_venda is None
+        and dados.observacao is None
+        and dados.link_fornecedor is None
+        and all(getattr(dados, campo) is None for campo in CAMPOS_PREMISSA)
     )
-    dados_update['calculado'] = resultado
+
+    if not so_decisao:
+        if preco <= custo:
+            raise HTTPException(
+                status_code=400,
+                detail="Preço de venda deve ser maior que custo unitário"
+            )
+        config = db.obter_configuracoes()
+        premissas = montar_premissas(config['premissas'], produto_atual, dados)
+        resultado = calc.calcular(
+            custo_unitario=custo,
+            preco_venda=preco,
+            config=premissas
+        )
+        dados_update['calculado'] = resultado
+        dados_update['premissas'] = premissas
     
     # Atualizar
     produto_atualizado = db.atualizar_produto(
@@ -375,7 +441,7 @@ def simular_cenarios(produto_id: int, current_user = Depends(get_current_user)):
         raise HTTPException(status_code=404, detail="Produto não encontrado")
     
     config = db.obter_configuracoes()
-    simulacoes = calc.simular_cenarios(produto, config['premissas'])
+    simulacoes = calc.simular_cenarios(produto, montar_premissas(config['premissas'], produto))
     
     return {
         "produto": {

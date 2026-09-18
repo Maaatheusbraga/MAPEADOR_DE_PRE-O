@@ -14,6 +14,14 @@ interface ProdutoEdicao {
   custo_unitario: number;
   preco_venda: number;
   observacao?: string;
+  link_fornecedor?: string;
+  premissas?: {
+    tacos?: number;
+    taxa_comissao?: number;
+    custo_prep?: number;
+    frete_fba?: number;
+    aliquota_imposto?: number;
+  };
   fornecedor_id?: number;
   fornecedor?: { id: number; nome: string };
 }
@@ -37,6 +45,7 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
     produto ? String(produto.preco_venda) : ''
   );
   const [observacao, setObservacao] = useState(produto?.observacao || '');
+  const [linkFornecedor, setLinkFornecedor] = useState(produto?.link_fornecedor || '');
   const [calculoPrevio, setCalculoPrevio] = useState<any>(null);
   const [configuracoes, setConfiguracoes] = useState<any>(null);
   const [erro, setErro] = useState('');
@@ -44,11 +53,11 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
   
   // NOVO: Estados para valores customizáveis
   const [editandoValores, setEditandoValores] = useState(false);
-  const [tacos, setTacos] = useState<number | null>(null);
-  const [taxaComissao, setTaxaComissao] = useState<number | null>(null);
-  const [custoPrep, setCustoPrep] = useState<number | null>(null);
-  const [freteFba, setFreteFba] = useState<number | null>(null);
-  const [aliquotaImposto, setAliquotaImposto] = useState<number | null>(null);
+  const [tacos, setTacos] = useState<number | null>(produto?.premissas?.tacos ?? null);
+  const [taxaComissao, setTaxaComissao] = useState<number | null>(produto?.premissas?.taxa_comissao ?? null);
+  const [custoPrep, setCustoPrep] = useState<number | null>(produto?.premissas?.custo_prep ?? null);
+  const [freteFba, setFreteFba] = useState<number | null>(produto?.premissas?.frete_fba ?? null);
+  const [aliquotaImposto, setAliquotaImposto] = useState<number | null>(produto?.premissas?.aliquota_imposto ?? null);
 
   useEffect(() => {
     carregarConfiguracoes();
@@ -171,6 +180,12 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
         custo_unitario: custo,
         preco_venda: preco,
         observacao: observacao.trim(),
+        link_fornecedor: linkFornecedor.trim(),
+        tacos: numeroOuPadrao(tacos, configuracoes?.tacos ?? 0.05),
+        taxa_comissao: numeroOuPadrao(taxaComissao, configuracoes?.taxa_comissao ?? 0),
+        custo_prep: numeroOuPadrao(custoPrep, configuracoes?.custo_prep ?? 1.3),
+        frete_fba: numeroOuPadrao(freteFba, configuracoes?.frete_fba ?? 6),
+        aliquota_imposto: numeroOuPadrao(aliquotaImposto, configuracoes?.aliquota_imposto ?? 0.04),
       };
 
       if (editando && produto) {
@@ -273,6 +288,20 @@ export function NovoProduto({ fornecedores, onSucesso, produto = null }: Props) 
               required
             />
           </div>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="produto-link-fornecedor">Link no Fornecedor:</label>
+          <input
+            id="produto-link-fornecedor"
+            type="text"
+            inputMode="url"
+            value={linkFornecedor}
+            onChange={(e) => setLinkFornecedor(e.target.value)}
+            placeholder="https://site-do-fornecedor.com/produto"
+            maxLength={500}
+          />
+          <small className="campo-ajuda">Opcional. Abre a página do produto no site do fornecedor.</small>
         </div>
 
         <div className="form-group">

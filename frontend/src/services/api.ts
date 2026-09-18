@@ -73,6 +73,13 @@ export const produtosAPI = {
     custo_unitario: number;
     preco_venda: number;
     observacao?: string;
+    link_fornecedor?: string;
+    decisao?: string;
+    tacos?: number;
+    taxa_comissao?: number;
+    custo_prep?: number;
+    frete_fba?: number;
+    aliquota_imposto?: number;
   }) => {
     const response = await api.post('/api/produtos', dados);
     return response.data;

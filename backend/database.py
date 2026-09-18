@@ -259,7 +259,9 @@ class Database:
     
     def criar_produto(self, usuario_id: int, nome: str, fornecedor_id: int,
                      custo_unitario: float, preco_venda: float,
-                     calculado: Dict, observacao: str = "") -> Dict:
+                     calculado: Dict, observacao: str = "",
+                     link_fornecedor: str = "", decisao: str = "analise",
+                     premissas: Optional[Dict] = None) -> Dict:
         """Cria novo produto para um usuário"""
         filepath = self._get_user_file(usuario_id, "produtos.json")
         data = self._load_json(filepath)
@@ -271,6 +273,9 @@ class Database:
             "custo_unitario": custo_unitario,
             "preco_venda": preco_venda,
             "observacao": observacao or "",
+            "link_fornecedor": link_fornecedor or "",
+            "decisao": decisao or "analise",
+            "premissas": premissas or {},
             "calculado": calculado,
             "ativo": True,
             "created_at": datetime.now().isoformat(),
@@ -287,7 +292,16 @@ class Database:
         """Lista produtos de um usuário"""
         filepath = self._get_user_file(usuario_id, "produtos.json")
         data = self._load_json(filepath)
-        return [p if 'observacao' in p else {**p, 'observacao': ''} for p in data['produtos'] if p['ativo']]
+        return [
+            {
+                **p,
+                "observacao": p.get("observacao", ""),
+                "link_fornecedor": p.get("link_fornecedor", ""),
+                "decisao": p.get("decisao", "analise"),
+                "premissas": p.get("premissas") or {},
+            }
+            for p in data['produtos'] if p['ativo']
+        ]
     
     def obter_produto(self, usuario_id: int, produto_id: int) -> Optional[Dict]:
         """Obtém um produto específico"""
@@ -307,7 +321,7 @@ class Database:
         for i, p in enumerate(data['produtos']):
             if p['id'] == produto_id and p['ativo']:
                 # Atualizar campos
-                for campo in ['nome', 'fornecedor_id', 'custo_unitario', 'preco_venda', 'observacao', 'calculado']:
+                for campo in ['nome', 'fornecedor_id', 'custo_unitario', 'preco_venda', 'observacao', 'link_fornecedor', 'decisao', 'premissas', 'calculado']:
                     if campo in dados:
                         data['produtos'][i][campo] = dados[campo]
                 
